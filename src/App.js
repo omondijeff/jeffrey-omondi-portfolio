@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import { 
   Mail,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Server,
+  Code,
+  Shield,
+  Activity
 } from 'lucide-react';
 
 const GithubIcon = ({ size = 24 }) => (
@@ -54,8 +58,43 @@ const App = () => {
     { title: "Greenspoon Hub", desc: "Optimizing fresh grocery supply chains with resilient automation.", img: "/work-greenspoon.png" }
   ];
 
-  const nextSection = () => currentSection < 1 && setCurrentSection(c => c + 1);
+  const services = [
+    { 
+      title: "Cloud Infrastructure", 
+      icon: <Server size={32} />, 
+      skills: ["Multi-cloud Architect", "Kubernetes", "Scalability"],
+      desc: "Building backbone infrastructure that glides as your user base explodes. Pure resilience."
+    },
+    { 
+      title: "DevOps Automation", 
+      icon: <Code size={32} />, 
+      skills: ["CI/CD Mastery", "GitOps", "Provisioning"],
+      desc: "Zero-touch deployment pipelines that turn complex releases into a non-event."
+    },
+    { 
+      title: "Resilient Security", 
+      icon: <Shield size={32} />, 
+      skills: ["IAM Hardening", "Compliance", "Observability"],
+      desc: "Hardening every node. From encryption-at-rest to real-time threat detection."
+    }
+  ];
+
+  const nextSection = () => currentSection < 3 && setCurrentSection(c => c + 1);
   const prevSection = () => currentSection > 0 && setCurrentSection(c => c - 1);
+
+  const getArrowLabel = (section) => {
+    if (section === 0) return "WORKS";
+    if (section === 1) return "SERVICES";
+    if (section === 2) return "ABOUT";
+    return "";
+  };
+
+  const getPrevLabel = (section) => {
+    if (section === 1) return "HOME";
+    if (section === 2) return "WORKS";
+    if (section === 3) return "SERVICES";
+    return "";
+  };
 
   return (
     <div className="main-canvas">
@@ -67,8 +106,8 @@ const App = () => {
           <div className="nav-menu">
             <span onClick={() => setCurrentSection(0)} className={currentSection === 0 ? "active" : ""}>Home</span>
             <span onClick={() => setCurrentSection(1)} className={currentSection === 1 ? "active" : ""}>Works</span>
-            <span className="">Services</span>
-            <span className="">About me</span>
+            <span onClick={() => setCurrentSection(2)} className={currentSection === 2 ? "active" : ""}>Services</span>
+            <span onClick={() => setCurrentSection(3)} className={currentSection === 3 ? "active" : ""}>About me</span>
           </div>
           <button className="btn-blue mono">LET'S TALK</button>
         </div>
@@ -78,15 +117,19 @@ const App = () => {
       <motion.div 
         className="persistent-subject-wrapper"
         animate={{ 
-          x: currentSection === 0 ? "0%" : "-30%",
-          scale: currentSection === 0 ? 1 : 0.95
+          x: currentSection === 0 ? "0%" : 
+             currentSection === 1 ? "-30%" : 
+             currentSection === 2 ? "65%" : "-52%",
+          scale: currentSection === 0 ? 1 : 
+                 currentSection === 2 ? 1.1 : 0.9,
+          opacity: currentSection === 2 ? 0.2 : 1
         }}
         transition={{ type: "spring", stiffness: 45, damping: 12, mass: 0.8 }}
       >
         <img src="/subject_new.png" alt="Jeffrey Omondi" className="subject-img" />
       </motion.div>
 
-      {/* Persistent Meta Overlay for Works section - Fixed outside to avoid clipping */}
+      {/* Persistent Meta Overlay for Works section */}
       <motion.div 
         className="subject-sidebar-overlay"
         initial={{ opacity: 0, x: -30 }}
@@ -95,7 +138,7 @@ const App = () => {
           x: currentSection === 1 ? 0 : -30,
           pointerEvents: currentSection === 1 ? 'auto' : 'none'
         }}
-        transition={{ delay: 0.5, duration: 0.6 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
       >
         <div className="meta-stick mono">ROLES & TITLE</div>
         <h2 className="meta-titles">Senior Platform Engineer & Founder</h2>
@@ -166,7 +209,7 @@ const App = () => {
             </motion.div>
           </section>
 
-          {/* Footers inside the section-wrapper but outside hero-clipper */}
+          {/* Footers */}
           <div className="hero-footer-left">
             <div className="hall-of-fame">
               {officialBadges.map((badge, idx) => (
@@ -220,20 +263,84 @@ const App = () => {
             </motion.div>
           </div>
         </div>
+
+        {/* SECTION 2: SERVICES */}
+        <div className="section services-view">
+          <div className="services-container-inner">
+             <motion.div 
+               className="services-header"
+               animate={{ opacity: currentSection === 2 ? 1 : 0, y: currentSection === 2 ? 0 : 20 }}
+             >
+               <h2 className="section-title mono">TECHNICAL <span>CAPABILITIES</span></h2>
+               <p className="service-intro">Delivering resilient ecosystems through the lens of performance and security.</p>
+             </motion.div>
+
+             <div className="services-grid">
+               {services.map((s, idx) => (
+                 <motion.div 
+                   key={idx} 
+                   className="service-card glass-premium"
+                   animate={{ opacity: currentSection === 2 ? 1 : 0, y: currentSection === 2 ? 0 : 40 }}
+                   transition={{ delay: 0.1 * idx }}
+                 >
+                   <div className="service-icon-box">{s.icon}</div>
+                   <h3 className="mono">{s.title}</h3>
+                   <div className="service-labels">
+                     {s.skills.map((skill, si) => <span key={si} className="s-pill">{skill}</span>)}
+                   </div>
+                   <p>{s.desc}</p>
+                 </motion.div>
+               ))}
+             </div>
+          </div>
+        </div>
+
+        {/* SECTION 3: ABOUT ME */}
+        <div className="section about-view">
+          <div className="about-layout-split">
+             <motion.div 
+               className="about-content-right"
+               animate={{ opacity: currentSection === 3 ? 1 : 0, x: currentSection === 3 ? 0 : 100 }}
+               transition={{ duration: 0.8 }}
+             >
+               <h2 className="section-title mono">JEFFREY <span>OMONDI</span></h2>
+               <div className="about-bio">
+                 <p className="bio-highlight">Developer at heart, Platform Engineer by trade.</p>
+                 <p>I specialize in building and scaling complex cloud ecosystems. From the very first line of a bespoke script to orchestrating multi-regional Kubernetes clusters, I focus on building software that lasts.</p>
+                 <p>Founder of <span className="blue-t">TajiLabs</span>, where we build resilient automation foundations for growing startups.</p>
+               </div>
+               
+               <div className="about-stats">
+                 <div className="stat-item">
+                   <div className="stat-val mono">5+</div>
+                   <div className="stat-label">Years Exp</div>
+                 </div>
+                 <div className="stat-item">
+                   <div className="stat-val mono">20+</div>
+                   <div className="stat-label">Deployments</div>
+                 </div>
+                 <div className="stat-item">
+                   <div className="stat-val mono">100%</div>
+                   <div className="stat-label">Uptime Sync</div>
+                 </div>
+               </div>
+             </motion.div>
+          </div>
+        </div>
       </motion.div>
 
       {/* Navigation Arrows */}
-      {currentSection === 0 && (
+      {currentSection < 3 && (
         <motion.div className="arrow-nav next" onClick={nextSection} whileHover={{ x: 10 }}>
           <ChevronRight size={40} />
-          <span className="mono">WORKS</span>
+          <span className="mono">{getArrowLabel(currentSection)}</span>
         </motion.div>
       )}
 
       {currentSection > 0 && (
         <motion.div className="arrow-nav prev" onClick={prevSection} whileHover={{ x: -10 }}>
           <ChevronLeft size={40} />
-          <span className="mono">HOME</span>
+          <span className="mono">{getPrevLabel(currentSection)}</span>
         </motion.div>
       )}
     </div>

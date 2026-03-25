@@ -245,18 +245,55 @@ body {
 .work-info-p h3 { font-size: 1.25rem; font-weight: 700; color: #1e293b; margin-bottom: 0.8rem; }
 .work-info-p p { color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.2rem; }
 
+/* SERVICES VIEW SECTION SECTION */
+.services-view { padding: 120px 8% 60px; background: #fafafa; }
+.services-container-inner { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.services-header { margin-bottom: 4rem; max-width: 600px; }
+.service-intro { font-size: 1.25rem; color: #64748b; line-height: 1.8; margin-top: 1rem; }
+
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; width: 100%; }
+.service-card.glass-premium { background: #fff; border-radius: 40px; padding: 3.5rem 3rem; border: 1px solid #f1f5f9; box-shadow: 0 20px 50px #00000008; transition: 0.4s; position: relative; overflow: hidden; }
+.service-icon-box { width: 70px; height: 70px; background: #f8fafc; border-radius: 22px; display: flex; align-items: center; justify-content: center; color: var(--accent-primary); margin-bottom: 2.5rem; border: 1px solid #e2e8f0; }
+.service-card h3 { font-size: 1.5rem; font-weight: 800; color: #1e293b; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+.service-labels { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.s-pill { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #64748b; background: #f1f5f9; padding: 0.5rem 1rem; border-radius: 12px; letter-spacing: 0.05em; }
+.service-card p { font-size: 1rem; color: #64748b; line-height: 1.7; }
+
+/* ABOUT ME VIEW VIEW VIEW */
+.about-view { padding: 120px 8% 60px; background: #fff; display: flex; align-items: center; }
+.about-layout-split { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.about-content-right { padding-left: 10rem; }
+.about-bio { max-width: 620px; margin-bottom: 4.5rem; }
+.bio-highlight { font-size: 1.5rem; font-weight: 700; color: #1e293b; margin-bottom: 1.8rem; }
+.about-bio p { font-size: 1.15rem; color: #64748b; line-height: 1.8; margin-bottom: 1.5rem; }
+.blue-t { color: var(--accent-primary); font-weight: 700; }
+
+.about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; border-top: 1px solid #f1f5f9; padding-top: 3.5rem; }
+.stat-val { font-size: 2.8rem; font-weight: 900; color: var(--accent-primary); margin-bottom: 0.5rem; letter-spacing: -2px; }
+.stat-label { font-size: 0.8rem; font-weight: 800; color: #1e293b; letter-spacing: 0.1em; text-transform: uppercase; }
+
 /* Navigation Hub Hub */
 .arrow-nav {
-  position: absolute; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.8rem; cursor: pointer; color: #94a3b8; z-index: 100; transition: 0.3s;
+  position: absolute; top: 52%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.8rem; cursor: pointer; color: #94a3b8; z-index: 100; transition: 0.3s;
 }
-.arrow-nav.next { right: 2%; }
-.arrow-nav.prev { left: 2%; }
-.arrow-nav span { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.15em; }
+.arrow-nav:hover { color: var(--accent-primary); }
+.arrow-nav.next { right: 2.5%; }
+.arrow-nav.prev { left: 2.5%; }
+.arrow-nav span { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.25em; }
 
-.btn-blue { background: var(--accent-primary); color: #fff; padding: 1.25rem 3.8rem; border-radius: 20px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 20px 40px #007aff40; }
+.btn-blue { background: var(--accent-primary); color: #fff; padding: 1.25rem 3.8rem; border-radius: 20px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 20px 40px #007aff4d; transition: 0.3s; }
+.btn-blue:hover { transform: translateY(-2px); box-shadow: 0 25px 50px #007aff66; }
 
 @media (max-width: 1400px) {
   .jeffrey-name { font-size: 6.5rem; }
   .works-gallery-shifted { grid-template-columns: repeat(2, 1fr); }
-  .subject-sidebar-overlay { scale: 0.85; transform-origin: left bottom; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-layout-split { grid-template-columns: 1fr; gap: 3rem; }
+  .about-content-right { padding-left: 0; }
+}
+
+@media (max-width: 1000px) {
+  .nav-menu { display: none; }
+  .jeffrey-name { font-size: 4.5rem; }
+  .hero-content { left: 5%; }
 }
