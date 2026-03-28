@@ -289,6 +289,7 @@ const App = () => {
           scale: (currentSection === 0) ? 1 : 
                  (currentSection === 2) ? 0.72 : 0.85,
           opacity: (isWorksMobile && currentSection !== 0) ? 0 :
+                   (isWorksMobile && currentSection === 0) ? 0.5 :
                    currentSection === 1 ? 0 : 
                    currentSection === 2 ? 0.9 : 
                    currentSection === 3 ? 0.25 : 1
