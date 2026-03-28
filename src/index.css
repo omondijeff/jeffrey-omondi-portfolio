@@ -1314,8 +1314,8 @@ body {
 @media (max-width: 900px) {
   .hero-content {
     left: 50% !important;
-    top: 32% !important;
-    transform: translate(-50%, -50%) !important;
+    top: 25% !important; /* Moved significantly higher to avoid face overlap */
+    transform: translate(-50%, -40%) !important;
     text-align: center;
     width: 90%;
     max-width: 480px;
@@ -1339,10 +1339,10 @@ body {
   }
 
   .typewriter-container {
-    font-size: 1.25rem !important;
-    height: 1.8rem !important;
+    font-size: 1.15rem !important; /* Slightly smaller to clear the face more effectively */
+    height: 1.6rem !important;
     justify-content: center !important;
-    margin-bottom: 0.6rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .intro-text {
@@ -1361,8 +1361,8 @@ body {
   }
 
   .persistent-subject-wrapper {
-    opacity: 0.55 !important;
-    transform: translateY(10%) !important; /* Shift subject down to clear face */
+    opacity: 0.5 !important;
+    transform: translateY(22%) !important; /* Push subject lower to clear the text */
   }
 
   .hero-logos-ribbon {
@@ -1373,7 +1373,7 @@ body {
 
   .hero-footer-right {
     position: absolute !important;
-    bottom: 75px !important;
+    bottom: 110px !important; /* Moved higher to clear hit and dots */
     right: 50% !important;
     transform: translateX(50%) !important;
     width: 100% !important;
@@ -1394,7 +1394,7 @@ body {
 /* --- Mobile Nav Hint --- */
 .mobile-nav-hint {
   position: absolute;
-  bottom: 80px;
+  bottom: 65px; /* Between socials and dots */
   left: 50%;
   transform: translateX(-50%);
   z-index: 4000;
