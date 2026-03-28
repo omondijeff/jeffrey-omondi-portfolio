@@ -348,7 +348,12 @@ const App = () => {
               >
                 <p className="hello">Hello, I'm</p>
                 <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
-                <p className="intro-text">Senior DevOps Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
+                <div className="intro-text">
+                  <div className="typewriter-container">
+                    <Typewriter texts={["Senior DevOps Engineer", "Software Engineer", "AI Engineer"]} />
+                  </div>
+                  <p className="intro-sub">Building high-performance, resilient cloud ecosystems.</p>
+                </div>
                 
                 <div className="hero-logos-ribbon">
                   <span className="mono uppercase small opacity-50">Proven Impact At</span>

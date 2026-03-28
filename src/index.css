@@ -122,7 +122,24 @@ body {
 .hero-content { position: absolute; left: 8.5%; top: 44%; transform: translateY(-50%); z-index: 15; max-width: 550px; }
 .hello { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
 .jeffrey-name { font-size: 8rem; font-weight: 900; line-height: 0.85; letter-spacing: -6px; margin-bottom: 2.2rem; }
-.intro-text { font-size: 1.25rem; color: #64748b; line-height: 1.8; }
+.intro-text { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.typewriter-container { 
+  font-size: 1.5rem; 
+  font-weight: 800; 
+  color: var(--accent-primary); 
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+.intro-sub { font-size: 1.15rem; color: #64748b; line-height: 1.8; margin: 0; }
+
+.typewriter-cursor {
+  opacity: 0;
+  color: var(--accent-primary);
+  margin-left: 2px;
+  font-weight: 400;
+}
+.typewriter-cursor.visible { opacity: 1; }
 
 .hero-footer-left { position: absolute; bottom: 50px; left: 6.5%; z-index: 50; pointer-events: auto; }
 .hero-footer-right { position: absolute; bottom: 50px; right: 6.5%; z-index: 50; pointer-events: auto; }
