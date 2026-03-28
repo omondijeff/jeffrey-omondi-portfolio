@@ -266,7 +266,7 @@ const App = () => {
       <nav className="navbar">
         <div className="nav-content">
           <div className="logo mono" onClick={() => setCurrentSection(0)} style={{ cursor: 'pointer' }}>
-            jeff<span>.</span>
+            omondijeff<span>.dev</span>
           </div>
           <div className="nav-menu">
             <span onClick={() => setCurrentSection(0)} className={currentSection === 0 ? "active" : ""}>Home</span>
