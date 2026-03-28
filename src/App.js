@@ -204,9 +204,14 @@ const App = () => {
         )}
       </AnimatePresence>
 
-      <div className="sections-container" style={{ transform: `translateX(-${currentSection * 100}%)`, transition: 'transform 0.8s cubic-bezier(0.83, 0, 0.17, 1)' }}>
+      <motion.div 
+        className="sections-container"
+        animate={{ x: `-${currentSection * 100}%` }}
+        transition={{ duration: 0.8, ease: [0.83, 0, 0.17, 1] }}
+      >
         {/* SECTION 0: HERO */}
         <section className="section hero">
+          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           
           {techLogos.map((logo, idx) => (
@@ -261,6 +266,7 @@ const App = () => {
         </section>
 
         <div className="section works-view">
+          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="works-scroll-container scroll-y">
             <div className="works-header-sticky">
                <span className="works-count mono uppercase">Archive ({filteredProjects.length})</span>
@@ -314,6 +320,7 @@ const App = () => {
 
         {/* SECTION 2: SERVICES */}
         <div className="section services-view scroll-y">
+          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           <div className="services-scroll-container">
             <div className="services-header-sticky">
@@ -347,6 +354,7 @@ const App = () => {
 
         {/* SECTION 3: ABOUT */}
         <div className="section about-view scroll-y">
+          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           
           <div className="about-modern-layout">
@@ -454,7 +462,7 @@ const App = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Navigation Arrows */}
       <AnimatePresence>
