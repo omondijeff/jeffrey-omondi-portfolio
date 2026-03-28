@@ -647,11 +647,11 @@ const App = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
           >
-            <div className="nav-control-label mono uppercase small">
-              Next: {currentSection === 0 ? "WORKS" : currentSection === 1 ? "SERVICES" : "ABOUT"}
-            </div>
             <div className="nav-control-btn">
               <ChevronRight size={24} />
+            </div>
+            <div className="nav-control-label mono uppercase small">
+              Next: {currentSection === 0 ? "WORKS" : currentSection === 1 ? "SERVICES" : "ABOUT"}
             </div>
           </motion.div>
         )}

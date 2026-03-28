@@ -1101,14 +1101,14 @@ body {
   transform: translateY(-50%);
   z-index: 3000;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: 0.8rem;
   cursor: pointer;
-  padding: 0.5rem;
 }
 
-.nav-control.next { right: 3%; flex-direction: row; }
-.nav-control.prev { left: 3%; flex-direction: row; }
+.nav-control.next { right: 3%; }
+.nav-control.prev { left: 3%; }
 
 .nav-control-btn {
   width: 58px;
@@ -1129,15 +1129,16 @@ body {
 .nav-control-label {
   color: #1e293b;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateY(10px);
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   white-space: nowrap;
   pointer-events: none;
 }
 
-.nav-control.prev .nav-control-label { transform: translateX(-10px); }
+.nav-control.prev .nav-control-label { transform: translateY(10px); }
 
 /* Hover States */
 .nav-control:hover .nav-control-btn {
@@ -1149,8 +1150,8 @@ body {
 }
 
 .nav-control:hover .nav-control-label {
-  opacity: 0.6;
-  transform: translateX(0);
+  opacity: 0.5;
+  transform: translateY(0);
 }
 
 /* Specific Section Adjustments */
