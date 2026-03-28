@@ -327,15 +327,11 @@ body {
 /* --- Works: phones & small tablets --- */
 @media (max-width: 900px) {
   .section.works-view {
-    align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    padding-top: max(88px, calc(72px + env(safe-area-inset-top, 0px)));
-    padding-left: max(12px, env(safe-area-inset-left, 0px));
-    padding-right: max(12px, env(safe-area-inset-right, 0px));
-    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 100px !important; /* Controlled by unified block too, but safe here */
   }
 
   .works-scroll-container {
@@ -438,15 +434,11 @@ body {
   }
 
   .section.services-view {
-    align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    padding-top: max(76px, calc(64px + env(safe-area-inset-top, 0px))); /* Reduced to match slim navbar */
-    padding-left: max(12px, env(safe-area-inset-left, 0px));
-    padding-right: max(12px, env(safe-area-inset-right, 0px)); /* Fixed typo: left -> right */
-    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 100px !important;
   }
 
   .services-scroll-container {
@@ -1319,6 +1311,20 @@ body {
   
   .main-canvas {
     border-radius: 20px !important;
+  }
+
+  /* --- Unified Section Constraints for Mobile --- */
+  .section {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100% !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    padding: 100px 20px 60px !important; /* Uniform padding to prevent placement shifts */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
   }
 
   .navbar {
