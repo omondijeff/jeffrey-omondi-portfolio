@@ -101,7 +101,6 @@ body {
   position: relative;
   overflow: hidden !important; /* Force containment of any internal drift */
   box-sizing: border-box;
-}
   display: flex;
   align-items: center;
   justify-content: center;
