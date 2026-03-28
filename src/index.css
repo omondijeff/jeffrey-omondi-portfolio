@@ -1354,12 +1354,14 @@ body {
     font-size: 1rem !important;
     max-width: 280px;
     margin: 0 auto !important;
-    opacity: 0.6;
+    opacity: 1 !important;
+    color: #f1f5f9 !important;
     line-height: 1.5 !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
   }
 
   .persistent-subject-wrapper {
-    opacity: 0.35 !important; /* Dimm subject for better text contrast */
+    opacity: 0.3 !important; /* Dimm subject further for better text contrast */
   }
 
   .hero-logos-ribbon {
@@ -1370,7 +1372,7 @@ body {
 
   .hero-footer-right {
     position: absolute !important;
-    bottom: 40px !important;
+    bottom: 75px !important;
     right: 50% !important;
     transform: translateX(50%) !important;
     width: 100% !important;
@@ -1386,4 +1388,35 @@ body {
     width: 44px !important;
     height: 44px !important;
   }
+}
+
+/* --- Mobile Navigation Dots --- */
+.mobile-nav-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4000;
+  padding: 10px;
+}
+
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+}
+
+.nav-dot.active {
+  background: var(--accent-primary);
+  width: 20px;
+  border-radius: 4px;
+}
+
+@media (min-width: 901px) {
+  .mobile-nav-dots { display: none; }
 }

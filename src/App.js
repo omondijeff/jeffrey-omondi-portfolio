@@ -675,6 +675,18 @@ const App = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Mobile Navigation Dots */}
+      {isWorksMobile && (
+        <div className="mobile-nav-dots">
+          {[0, 1, 2, 3].map(i => (
+            <div 
+              key={i} 
+              className={`nav-dot ${currentSection === i ? 'active' : ''}`}
+              onClick={() => setCurrentSection(i)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
