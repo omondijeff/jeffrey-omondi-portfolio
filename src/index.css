@@ -179,6 +179,41 @@ body {
 
 /* --- Works Section (Scrollable) --- */
 .works-view { padding: 120px 8% 60px; background: #fcfcfc; position: relative; }
+
+.works-filter-bar {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  z-index: 20;
+  position: relative;
+}
+
+.filter-pill {
+  padding: 0.8rem 1.6rem;
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.filter-pill:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.filter-pill.active {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 10px 25px rgba(0, 122, 255, 0.25);
+}
+
 .works-scroll-container { 
   width: 68%; margin-left: auto; height: 100%; overflow-y: auto; padding-right: 20px; 
   scrollbar-width: thin; scrollbar-color: var(--accent-primary) transparent;
@@ -200,7 +235,23 @@ body {
 .work-year { font-size: 0.75rem; font-weight: 900; color: #1e293b; background: #f1f5f9; padding: 0.4rem 0.8rem; border-radius: 12px; }
 .work-meta { font-size: 0.75rem; font-weight: 900; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.1em; }
 .work-info-p h3 { font-size: 1.35rem; font-weight: 800; color: #1e293b; margin-bottom: 0.8rem; letter-spacing: -0.04em; }
-.work-info-p p { font-size: 0.95rem; color: #64748b; line-height: 1.6; }
+.work-info-p p { font-size: 0.95rem; color: #64748b; line-height: 1.6; margin-bottom: 1.5rem; }
+
+.work-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.w-tech-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #94a3b8;
+  background: #f8fafc;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
 
 /* --- Shared Section Utilities --- */
 .scroll-y {

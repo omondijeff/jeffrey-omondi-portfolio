@@ -60,12 +60,38 @@ const App = () => {
   ];
 
   const allProjects = [
-    { title: "Verifay Web App", cat: "FINTECH", year: "2024", desc: "Digital trust and verification platform for high-security environments.", img: "/images/projects/betterflow-betterqa.png" },
-    { title: "Greenspoon Loyalty", cat: "COMMERCE", year: "2023", desc: "Enterprise loyalty engine processing millions in transactional value.", img: "/work-greenspoon.png" },
-    { title: "Turality AI Cloud", cat: "AI/ML", year: "2024", desc: "Serverless infrastructure for large language model deployment.", img: "/images/projects/remedy-grafana.png" },
-    { title: "Amrutt Kenya", cat: "WEB", year: "2023", desc: "WooCommerce store with bulk SMS and WhatsApp retail integration.", img: "/images/projects/amrutt-kenya.png" },
-    { title: "BetterFlow", cat: "AUTOMATION", year: "2024", desc: "Workflow automation and pipeline orchestration for tech teams.", img: "/images/projects/n8n.png" }
+    { id: 1, title: "Tajilabs Kenya Website", cat: "WEB", year: "2024", desc: "Modern web development company website built with responsive design principles.", img: "/images/projects/tajilabs.png", tech: ["WordPress", "WooCommerce", "DevOps", "CI/CD"] },
+    { id: 2, title: "Loan Clients Onboard Automation", cat: "AUTOMATION", year: "2023", desc: "Automated client onboarding system that streamlined the loan application process.", img: "/images/projects/lendbucks.png", tech: ["Node.js", "Express", "PostgreSQL", "Docker"] },
+    { id: 3, title: "N8N Workflow Automation", cat: "AUTOMATION", year: "2024", desc: "Business process automation platform that connects various services.", img: "/images/projects/n8n.png", tech: ["N8N", "API Integration", "Workflow Automation"] },
+    { id: 4, title: "Hala Nairobi Website", cat: "WEB", year: "2023", desc: "Restaurant and hospitality website with online ordering and reservation system.", img: "/images/projects/hala.png", tech: ["React", "Node.js", "MongoDB", "Payment Gateway"] },
+    { id: 5, title: "MSGN & Partners Website", cat: "WEB", year: "2023", desc: "Professional services company website with client portal and document management.", img: "/images/projects/msgn.png", tech: ["Laravel", "Vue.js", "MySQL", "AWS"] },
+    { id: 6, title: "Nelson Haus", cat: "WEB", year: "2024", desc: "Real estate platform featuring property listings and virtual tours.", img: "/images/projects/nelson-haus.png", tech: ["Next.js", "TypeScript", "PostgreSQL", "Cloudinary"] },
+    { id: 7, title: "JK Ventures Website", cat: "WEB", year: "2024", desc: "Investment platform with portfolio management and analytics dashboard.", img: "/images/projects/jk-vantures.png", tech: ["React", "Node.js", "MongoDB", "Chart.js"] },
+    { id: 8, title: "Qwetu Sacco Website", cat: "WEB", year: "2023", desc: "Financial cooperative website with member portal and loan management.", img: "/images/projects/qwetu-sacco.png", tech: ["PHP", "Laravel", "MySQL", "Bootstrap"] },
+    { id: 9, title: "Tikvah Center", cat: "WEB", year: "2023", desc: "Educational institution website with course management and student portal.", img: "/images/projects/tikvah.png", tech: ["WordPress", "LMS Plugin", "Custom Themes", "SEO"] },
+    { id: 10, title: "Gap Talent Partners", cat: "AUTOMATION", year: "2024", desc: "HR recruitment platform with cloud hosting and workflow automation.", img: "/images/projects/gap-talent-partners.png", tech: ["WordPress", "Cloud Hosting", "Automation", "CI/CD"] },
+    { id: 12, title: "Amrutt Kenya E-Commerce", cat: "WEB", year: "2023", desc: "WooCommerce store with bulk SMS and WhatsApp retail integration.", img: "/images/projects/amrutt-kenya.png", tech: ["WordPress", "WooCommerce", "Bulk SMS", "WhatsApp API"] },
+    { id: 13, title: "Liafro Store", cat: "SHOPIFY", year: "2023", desc: "Shopify store with DHL and Fargo logistics integrations.", img: "/images/projects/liafro-kenya.png", tech: ["Shopify", "Liquid", "Logistics APIs", "DHL"] },
+    { id: 14, title: "Pension Pilot Platform", cat: "DEVOPS", year: "2024", desc: "Pension consolidation platform for tracking multiple retirement accounts.", img: "/images/projects/pension-pilot.png", tech: ["React", "Node.js", "PostgreSQL", "APIs"] },
+    { id: 15, title: "Zuri Boilerplate", cat: "PRODUCTS", year: "2024", desc: "Headless WordPress starter with Vue.js, Docker, and CI/CD.", img: "/images/products/zuri.png", tech: ["Vue.js 3", "WP REST API", "Docker", "GitHub Actions"] },
+    { id: 16, title: "Errorlytic", cat: "PRODUCTS", year: "2024", desc: "Automotive diagnostic system: fault codes, quotes, and insurance.", img: "/images/products/errorlytic.png", tech: ["Fault Detection", "Quotation", "Insurance", "Inventory"] },
+    { id: 17, title: "AJiri Automation", cat: "PRODUCTS", year: "2024", desc: "HR interview automation: scheduling and candidate tracking.", img: "/images/products/ajiri.png", tech: ["Scheduling", "Calendar Sync", "Pipeline", "Tracking"] },
+    { id: 18, title: "Remedy School OS", cat: "PRODUCTS", year: "2024", desc: "Full school operating system: admissions, fees, and grading.", img: "/images/products/remedy.png", tech: ["Admissions", "M-Pesa", "Timetabling", "Grades"] },
+    { id: 19, title: "TajiRent", cat: "PRODUCTS", year: "2024", desc: "Property management: tenants, rent collection, and maintenance.", img: "/images/products/taji-rent.png", tech: ["Tenant Mgmt", "M-Pesa", "Maintenance", "Reports"] },
+    { id: 20, title: "Pipo Payroll", cat: "PRODUCTS", year: "2024", desc: "KRA compliant automated payroll: PAYE, NHIF, and NSSF.", img: "/images/products/pipo.png", tech: ["PAYE", "NHIF", "NSSF", "Payslips", "Tax"] },
+    { id: 21, title: "DevLog", cat: "PRODUCTS", year: "2024", desc: "Standups that write themselves: GitHub activity surfaced in Slack.", img: "/images/products/devlog.png", tech: ["GitHub", "Slack", "PR Tracking", "Summaries"] },
+    { id: 22, title: "Amrutt Kenya Headless", cat: "WEB", year: "2024", desc: "Headless e‑commerce with Elasticsearch and Cloudflare Workers.", img: "/images/projects/amrutt-headless.png", tech: ["WordPress", "Elasticsearch", "Cloudflare Workers"] },
+    { id: 23, title: "AI-SDR by BetterQA", cat: "AUTOMATION", year: "2025", desc: "AI-powered sales development and outreach tooling.", img: "/images/projects/ai-sdr-betterqa.png", tech: ["AI", "Sales Automation", "BetterQA"] },
+    { id: 24, title: "Betterflow", cat: "AUTOMATION", year: "2025", desc: "Workflow and process automation platform at BetterQA.", img: "/images/projects/betterflow-betterqa.png", tech: ["Workflow", "Automation", "BetterQA"] },
+    { id: 25, title: "Remedy Dashboard", cat: "PRODUCTS", year: "2024", desc: "Grafana monitoring and dashboards for the Remedy platform.", img: "/images/projects/remedy-grafana.png", tech: ["Grafana", "Monitoring", "Remedy", "Metrics"] },
+    { id: 26, title: "Mensbestbasics", cat: "SHOPIFY", year: "2024", desc: "UK Shopify store with custom theme and backend extensions.", img: "/images/projects/mensbestbasics-shopify.png", tech: ["Shopify", "Liquid", "E‑commerce", "Retail"] },
+    { id: 27, title: "Purity Sang Advocates", cat: "WEB", year: "2024", desc: "Professional website for a Kenyan law firm.", img: "/images/projects/puritysangadvocates.png", tech: ["WordPress", "Responsive", "SEO", "Inquiry"] }
   ];
+
+  const [activeFilter, setActiveFilter] = useState("ALL");
+  const filteredProjects = activeFilter === "ALL" 
+    ? allProjects 
+    : allProjects.filter(p => p.cat === activeFilter);
 
   const expertiseCategories = [
     { id: "devops", title: "DevOps & Cloud", icon: <Server size={28} />, skills: ["Jenkins", "Terraform", "Docker", "GitLab CI", "GitHub Actions", "Ansible", "AWS", "Kubernetes"] },
@@ -241,19 +267,34 @@ const App = () => {
           </section>
         </div>
 
-        {/* SECTION 1: WORKS */}
         <div className="section works-view">
           <div className="works-scroll-container scroll-y">
             <div className="works-header-sticky">
-               <span className="works-count mono uppercase">Selected Projects (/05)</span>
+               <span className="works-count mono uppercase">Archive ({filteredProjects.length})</span>
                <h2 className="section-title grad-text">RECENT <span>WORKS</span></h2>
+               
+               <div className="works-filter-bar">
+                 {["ALL", "WEB", "PRODUCTS", "AUTOMATION", "DEVOPS", "SHOPIFY"].map(f => (
+                   <span 
+                    key={f} 
+                    className={`filter-pill mono ${activeFilter === f ? 'active' : ''}`}
+                    onClick={() => setActiveFilter(f)}
+                   >
+                     {f}
+                   </span>
+                 ))}
+               </div>
             </div>
+
             <div className="works-full-grid">
-              {allProjects.map((w, idx) => (
+              {filteredProjects.map((w, idx) => (
                 <motion.div 
-                  key={idx} 
+                  key={w.id || idx} 
+                  layout
                   className="work-card-premium" 
-                  transition={{ delay: 0.2 + idx * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05 }}
                   whileHover={{ y: -10, scale: 1.01 }}
                 >
                   <div className="work-thumb-p">
@@ -265,11 +306,12 @@ const App = () => {
                       <span className="work-meta mono uppercase">{w.cat}</span>
                     </div>
                     <h3 className="mono">{w.title}</h3>
-                    <div className="work-labels">
-                      <span className="skill-pill mono">REACT</span>
-                      <span className="skill-pill mono">TAILWIND</span>
-                    </div>
                     <p>{w.desc}</p>
+                    <div className="work-tech-tags">
+                      {w.tech?.map((t, tidx) => (
+                        <span key={tidx} className="w-tech-tag mono">{t}</span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
