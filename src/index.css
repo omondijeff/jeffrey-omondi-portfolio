@@ -1355,9 +1355,10 @@ body {
 
   /* --- Final Alignment Lock for Mobile --- */
   .sections-container {
-    width: 100% !important;
-    overflow: hidden !important;
     display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* Do NOT use overflow: hidden here; it clips the other section slides */
   }
 
   .section {
