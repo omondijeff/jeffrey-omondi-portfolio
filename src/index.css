@@ -1348,6 +1348,13 @@ body {
     z-index: 20;
   }
 
+  .works-scroll-container,
+  .services-scroll-container,
+  .about-scroll-container,
+  .scroll-y {
+    touch-action: pan-y !important; /* Allow horizontal swipes to bubble up to parent drag */
+  }
+
   .hello { 
     font-size: 1.1rem !important; 
     margin-bottom: 0.25rem !important;
