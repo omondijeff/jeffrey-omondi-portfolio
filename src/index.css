@@ -1387,9 +1387,9 @@ body {
   }
 
   .persistent-subject-wrapper {
-    opacity: 0.5 !important;
     align-items: flex-start !important; /* Bring face to top */
     transform: translateY(4%) !important; /* Moved slightly lower as requested */
+    z-index: 5; /* Keep below content but ensure visibility logic works */
   }
 
   .hero-logos-ribbon {
