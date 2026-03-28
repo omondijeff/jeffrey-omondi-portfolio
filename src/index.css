@@ -1203,7 +1203,7 @@ body {
   align-items: center;
   gap: 4.5rem;
   width: max-content;
-  animation: logo-marquee 40s linear infinite;
+  animation: logo-marquee 25s linear infinite;
 }
 
 @keyframes logo-marquee {
