@@ -19,8 +19,7 @@ import {
   Mic,
   Brain,
   Briefcase,
-  Bot,
-  Sparkles
+  Bot
 } from 'lucide-react';
 
 const GithubIcon = ({ size = 24 }) => (
