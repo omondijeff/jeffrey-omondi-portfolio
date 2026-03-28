@@ -434,11 +434,12 @@ const App = () => {
                     </p>
                     <p>
                       That drive fueled the creation of <strong>TajiLabs</strong>, where I spent three years scaling cloud architecture for 15+ organizations. 
-                      This founder-led journey was my sandbox for diversification—from digitizing warehouse logistics for Bio Foods to architecting secure Edtech SaaS. 
+                      This founder-led journey was my sandbox for diversification—from architecting secure <strong>Edtech SaaS for Remedy</strong> to leading digital transformation for SMEs across East Africa. 
                       It taught me that DevOps isn't just a technical role; it's a <strong>business strategy</strong> for speed and stability.
                     </p>
                     <p>
                       This converged at <strong>Greenspoon</strong>, where I reported directly to the CTO to lead platform strategy during a period of 96% operational growth. 
+                      I led the architecture of end-to-end <strong>logistics, procurement, and transport/dispatch systems</strong>, digitizing their entire warehouse ecosystem. 
                       By building an <strong>Internal Developer Platform (IDP)</strong>, I didn't just automate pipelines; I created "Golden Paths" for our engineers to ship with confidence. 
                       Today, at BetterQA, I continue this mission—architecting global, multi-tenant SaaS platforms and AI-driven workflows that treat infrastructure as a first-class product.
                     </p>
