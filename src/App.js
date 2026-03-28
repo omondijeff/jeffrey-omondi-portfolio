@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Mail,
   ChevronRight,
   ChevronLeft,
   Server,
-  Code,
-  Shield,
-  Activity,
-  Globe,
-  ShoppingCart,
   Zap,
   GraduationCap,
   Cpu,
@@ -34,10 +29,28 @@ const LinkedinIcon = ({ size = 24 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
 );
 
-const BrainIcon = Brain;
+
+
+/** When showing ALL works: PRODUCTS → AUTOMATION → DEVOPS first, then other categories. */
+const PORTFOLIO_CATEGORY_ORDER = ["PRODUCTS", "AUTOMATION", "DEVOPS"];
+const portfolioCategoryRank = (cat) => {
+  const i = PORTFOLIO_CATEGORY_ORDER.indexOf(cat);
+  return i === -1 ? PORTFOLIO_CATEGORY_ORDER.length : i;
+};
 
 const App = () => {
   const [currentSection, setCurrentSection] = useState(0);
+  const [isWorksMobile, setIsWorksMobile] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 900px)').matches : false
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 900px)');
+    const onChange = () => setIsWorksMobile(mq.matches);
+    onChange();
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
   
   const techLogos = [
     { name: "AWS", src: "/logo-aws.svg", top: "15%", left: "10%" },
@@ -54,10 +67,7 @@ const App = () => {
     { label: "Full Stack Dev", img: "/pillar-workflow.png", offset: -40 },
   ];
 
-  const officialBadges = [
-    { src: "/badge-aws-sap.png", label: "AWS Certified" },
-    { src: "/badge-cka.png", label: "CKA Certified" },
-  ];
+
 
   const allProjects = [
     { id: 1, title: "Tajilabs Kenya Website", cat: "WEB", year: "2024", desc: "Modern web development company website built with responsive design principles.", img: "/images/projects/tajilabs.png", tech: ["WordPress", "WooCommerce", "DevOps", "CI/CD"] },
@@ -89,9 +99,20 @@ const App = () => {
   ];
 
   const [activeFilter, setActiveFilter] = useState("ALL");
-  const filteredProjects = activeFilter === "ALL" 
-    ? allProjects 
-    : allProjects.filter(p => p.cat === activeFilter);
+
+  const projectsMatchingFilter =
+    activeFilter === "ALL"
+      ? allProjects
+      : allProjects.filter((p) => p.cat === activeFilter);
+  const filteredProjects = [...projectsMatchingFilter].sort((a, b) => {
+    const ra = portfolioCategoryRank(a.cat);
+    const rb = portfolioCategoryRank(b.cat);
+    if (ra !== rb) return ra - rb;
+    const ya = parseInt(a.year, 10) || 0;
+    const yb = parseInt(b.year, 10) || 0;
+    if (yb !== ya) return yb - ya;
+    return (a.id ?? 0) - (b.id ?? 0);
+  });
 
   const expertiseCategories = [
     { id: "devops", title: "DevOps & Cloud", icon: <Server size={28} />, skills: ["Jenkins", "Terraform", "Docker", "GitLab CI", "GitHub Actions", "Ansible", "AWS", "Kubernetes"] },
@@ -167,12 +188,14 @@ const App = () => {
       <motion.div 
         className="persistent-subject-wrapper"
         animate={{ 
-          x: currentSection === 0 ? "15%" : 
+          x: isWorksMobile && currentSection === 1 ? '-130%' : 
+             currentSection === 0 ? "15%" : 
              currentSection === 1 ? "-32%" : 
              currentSection === 2 ? "120%" : "-52%",
           scale: currentSection === 0 ? 1 : 
                  currentSection === 2 ? 0.8 : 0.85,
-          opacity: currentSection === 2 ? 0 : 
+          opacity: isWorksMobile && currentSection === 1 ? 0 :
+                   currentSection === 2 ? 0 : 
                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
@@ -266,11 +289,10 @@ const App = () => {
         </section>
 
         <div className="section works-view">
-          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="works-scroll-container scroll-y">
             <div className="works-header-sticky">
                <span className="works-count mono uppercase">Archive ({filteredProjects.length})</span>
-               <h2 className="section-title grad-text">RECENT <span>WORKS</span></h2>
+               <h2 className="section-title grad-text works-section-title">RECENT <span>WORKS</span></h2>
                
                <div className="works-filter-bar">
                  {["ALL", "WEB", "PRODUCTS", "AUTOMATION", "DEVOPS", "SHOPIFY"].map(f => (
@@ -319,25 +341,25 @@ const App = () => {
         </div>
 
         {/* SECTION 2: SERVICES */}
-        <div className="section services-view scroll-y">
-          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
-          <div className="grain-overlay" />
-          <div className="services-scroll-container">
+        <div className="section services-view">
+          <div className="services-scroll-container scroll-y">
             <div className="services-header-sticky">
-               <span className="works-count mono uppercase">Capabilities ({expertiseCategories.length})</span>
-               <h2 className="section-title grad-text">TECHNICAL <span>EXPERTISE</span></h2>
-               <p className="service-intro">Highly categorized engineering stack across the full software lifecycle.</p>
+              <div className="services-header-lead">
+                <span className="works-count mono uppercase">Capabilities ({expertiseCategories.length})</span>
+                <h2 className="section-title grad-text services-section-title">TECHNICAL <span>EXPERTISE</span></h2>
+              </div>
+              <p className="service-intro">Highly categorized engineering stack across the full software lifecycle.</p>
             </div>
              
              <div className="services-full-grid">
                {expertiseCategories.map((cat, idx) => (
                  <motion.div 
                    key={idx} 
-                   className="expertise-card glass-premium" 
+                   className={`expertise-card${idx === 0 ? ' expertise-card--lead' : ''}`}
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ delay: 0.1 + idx * 0.05 }}
-                   whileHover={{ y: -10, scale: 1.02 }}
+                   whileHover={{ y: -10, scale: 1.01 }}
                  >
                    <div className="expertise-header">
                      <div className="expertise-icon-wrapper">{cat.icon}</div>
