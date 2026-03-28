@@ -1309,3 +1309,81 @@ body {
   opacity: 1;
   transform: translateY(-2px);
 }
+
+/* --- Mobile Hero Optimizations --- */
+@media (max-width: 900px) {
+  .hero-content {
+    left: 50% !important;
+    top: 48% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center;
+    width: 90%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+  }
+
+  .hello { 
+    font-size: 1.1rem !important; 
+    margin-bottom: 0.25rem !important;
+    opacity: 0.8;
+  }
+
+  .jeffrey-name {
+    font-size: clamp(3.2rem, 14vw, 4.2rem) !important;
+    letter-spacing: -2px !important;
+    margin-bottom: 1.8rem !important;
+    line-height: 0.88 !important;
+  }
+
+  .typewriter-container {
+    font-size: 1.25rem !important;
+    height: 1.8rem !important;
+    justify-content: center !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .intro-text {
+    margin: 1.2rem 0 2.5rem !important;
+    align-items: center !important;
+  }
+
+  .intro-sub {
+    font-size: 1rem !important;
+    max-width: 280px;
+    margin: 0 auto !important;
+    opacity: 0.6;
+    line-height: 1.5 !important;
+  }
+
+  .persistent-subject-wrapper {
+    opacity: 0.35 !important; /* Dimm subject for better text contrast */
+  }
+
+  .hero-logos-ribbon {
+    margin-top: 3rem !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .hero-footer-right {
+    position: absolute !important;
+    bottom: 40px !important;
+    right: 50% !important;
+    transform: translateX(50%) !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .socials {
+    gap: 1.5rem !important;
+  }
+
+  .social-circle {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
