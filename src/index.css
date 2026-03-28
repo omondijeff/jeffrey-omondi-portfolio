@@ -793,6 +793,62 @@ body {
   background: #fff;
 }
 
+/* --- Services Badges Overlay --- */
+.services-badges-overlay {
+  position: absolute;
+  left: 6.5%;
+  top: 25%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  pointer-events: none;
+}
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  pointer-events: auto;
+}
+
+.badge-item {
+  width: 74px;
+  height: 74px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border: 1px solid #f1f5f9;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.badge-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.badge-item:hover {
+  transform: translateY(-8px) scale(1.15);
+  box-shadow: 0 20px 40px rgba(0, 122, 255, 0.15);
+  border-color: var(--accent-primary);
+  z-index: 10;
+}
+
+.badge-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
 /* --- About Section: Modern Layout --- */
 .about-view { 
   padding: 180px 6% 80px; 

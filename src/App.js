@@ -166,6 +166,15 @@ const App = () => {
     location: "Nairobi, Kenya"
   };
 
+  const certificationBadges = [
+    { id: 'aws-sa', src: '/badge-aws-sa.png', label: 'AWS Solutions Architect' },
+    { id: 'aws-sap', src: '/badge-aws-sap.png', label: 'AWS SAP' },
+    { id: 'cka', src: '/badge-cka.png', label: 'CKA' },
+    { id: 'terraform', src: '/badge-terraform.png', label: 'Terraform' },
+    { id: 'kcna', src: '/badge-kcna.png', label: 'KCNA' },
+    { id: 'azure', src: '/badge-azure.png', label: 'Azure' }
+  ];
+
   const nextSection = () => currentSection < 3 && setCurrentSection(c => c + 1);
   const prevSection = () => currentSection > 0 && setCurrentSection(c => c - 1);
 
@@ -195,8 +204,10 @@ const App = () => {
              currentSection === 0 ? "15%" : 
              (currentSection === 1 || currentSection === 2) ? "-32%" : 
              "-52%",
-          scale: (currentSection === 0) ? 1 : 0.85,
+          scale: (currentSection === 0) ? 1 : 
+                 (currentSection === 2) ? 0.72 : 0.85,
           opacity: (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? 0 :
+                   currentSection === 2 ? 0.9 : 
                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
@@ -224,6 +235,33 @@ const App = () => {
                 </div>
               ))}
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {currentSection === 2 && !isWorksMobile && (
+          <motion.div 
+            className="services-badges-overlay"
+            initial={{ opacity: 0, y: 30, x: -20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 30, x: -20, scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          >
+            <div className="badge-grid">
+              {certificationBadges.map((badge, bidx) => (
+                <motion.div 
+                  key={badge.id}
+                  className="badge-item glass-premium"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3 + bidx * 0.1 }}
+                >
+                  <img src={badge.src} alt={badge.label} title={badge.label} />
+                </motion.div>
+              ))}
+            </div>
+            <div className="badge-tag mono uppercase">Certified Engineering</div>
           </motion.div>
         )}
       </AnimatePresence>
