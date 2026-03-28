@@ -352,6 +352,7 @@ const App = () => {
       <motion.div 
         className="sections-container"
         drag={isWorksMobile ? "x" : false}
+        dragDirectionLock={true}
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.05}
         onDragEnd={(e, { offset, velocity }) => {
