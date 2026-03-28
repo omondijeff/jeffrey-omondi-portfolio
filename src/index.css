@@ -1363,7 +1363,7 @@ body {
   .persistent-subject-wrapper {
     opacity: 0.5 !important;
     align-items: flex-start !important; /* Bring face to top */
-    transform: translateY(-2%) !important; 
+    transform: translateY(4%) !important; /* Moved slightly lower as requested */
   }
 
   .hero-logos-ribbon {
