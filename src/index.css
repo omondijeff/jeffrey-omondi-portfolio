@@ -466,10 +466,11 @@ body {
   }
 
   .services-view .services-section-title {
-    font-size: clamp(2rem, 9vw, 2.75rem);
-    letter-spacing: -0.06em;
-    margin-bottom: 0.65rem;
-    line-height: 0.95;
+    font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1 !important;
+    text-align: center !important;
   }
 
   .services-view .works-count {
@@ -489,8 +490,16 @@ body {
   }
 
   .services-view .expertise-card {
-    border-radius: 22px;
-    padding: 1.35rem 1.2rem;
+    flex-direction: column !important;
+    text-align: center !important;
+    border-radius: 24px !important;
+    padding: 2rem 1.5rem !important;
+    align-items: center !important;
+  }
+
+  .expertise-icon-side {
+    margin-right: 0 !important;
+    margin-bottom: 1.2rem !important;
   }
 
   .services-view .expertise-header {
@@ -524,10 +533,11 @@ body {
 
   .expertise-card.expertise-card--lead {
     grid-column: auto;
-    flex-direction: column;
+    flex-direction: column !important;
     background: #fff;
     border: 1px solid #f1f5f9;
     box-shadow: 0 15px 45px #00000006;
+    align-items: center !important;
   }
 
   .expertise-card.expertise-card--lead .expertise-header {
@@ -1315,16 +1325,17 @@ body {
 
   /* --- Unified Section Constraints for Mobile --- */
   .section {
-    width: 100vw !important;
-    min-width: 100vw !important;
+    width: 100% !important;
+    min-width: 100% !important;
     height: 100% !important;
     flex-shrink: 0 !important;
     flex-grow: 0 !important;
-    padding: 100px 20px 60px !important; /* Uniform padding to prevent placement shifts */
+    padding: 90px 20px 80px !important; /* Uniform padding, slightly more bottom for dots */
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: center !important;
+    text-align: center !important;
   }
 
   .navbar {
