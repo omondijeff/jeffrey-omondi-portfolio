@@ -121,7 +121,7 @@ body {
 /* --- Hero Elements --- */
 .hero-content { position: absolute; left: 8.5%; top: 44%; transform: translateY(-50%); z-index: 15; max-width: 550px; }
 .hello { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
-.jeffrey-name { font-size: 8rem; font-weight: 900; line-height: 0.85; letter-spacing: -6px; margin-bottom: 2.2rem; }
+.jeffrey-name { font-size: 5.5rem; font-weight: 900; line-height: 0.85; letter-spacing: -4px; margin-bottom: 2.2rem; }
 .intro-text { margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
 .typewriter-container { 
   font-size: 1.5rem; 
