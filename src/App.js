@@ -11,117 +11,110 @@ import {
   Globe,
   ShoppingCart,
   Zap,
-  Calendar,
-  Briefcase,
-  GraduationCap
+  GraduationCap,
+  Cpu,
+  Database,
+  Layout,
+  Car,
+  Music,
+  MapPin,
+  Smartphone,
+  Award,
+  Users,
+  Mic,
+  Brain,
+  Briefcase
 } from 'lucide-react';
 
 const GithubIcon = ({ size = 24 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
 );
 
 const LinkedinIcon = ({ size = 24 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
 );
 
-const App = () => {
-  const [currentSection, setCurrentSection] = useState(0); 
-  const [aboutTabIndex, setAboutTabIndex] = useState(0);
+const BrainIcon = Brain;
 
-  const experienceStats = [
-    { label: "Business Process & Workflow Automation", img: "/pillar-workflow.png", offset: -30 },
-    { label: "Software & Cloud Solutions Architect", img: "/pillar-cloud.png", offset: 40 },
-    { label: "Senior IT Consultant", img: "/pillar-consultant.png", offset: -10 }
+const App = () => {
+  const [currentSection, setCurrentSection] = useState(0);
+  
+  const techLogos = [
+    { name: "AWS", src: "/logo-aws.svg", top: "15%", left: "10%" },
+    { name: "Docker", src: "/logo-docker.png", top: "20%", right: "12%" },
+    { name: "Kubernetes", src: "/logo-k8s.svg", bottom: "25%", left: "15%" },
+    { name: "Terraform", src: "/logo-terraform.svg", bottom: "18%", right: "18%" },
+    { name: "Python", src: "/logo-python.svg", top: "35%", right: "8%" },
+    { name: "Node.js", src: "/tech-node.png", top: "40%", left: "5%" },
   ];
 
-  const techLogos = [
-    { src: "/logo-k8s.svg", name: "K8s", top: '10%', left: '5%' },
-    { src: "/logo-docker.png", name: "Docker", top: '8%', left: '40%' },
-    { src: "/logo-prometheus.svg", name: "Prometheus", top: '60%', left: '3%' },
-    { src: "/logo-aws.svg", name: "AWS", top: '78%', left: '25%' },
-    { src: "/logo-grafana.svg", name: "Grafana", top: '7%', left: '58%' },
-    { src: "/logo-azure.svg", name: "Azure", top: '42%', left: '3%' },
-    { src: "/logo-oci.png", name: "OCI", top: '80%', right: '18%' },
-    { src: "/logo-go.svg", name: "Go", top: '10%', right: '6%' },
-    { src: "/logo-python.svg", name: "Python", top: '68%', right: '30%' },
-    { src: "/logo-js.png", name: "JS", top: '85%', left: '48%' }
+  const experienceStats = [
+    { label: "Platform Engineer", img: "/pillar-cloud.png", offset: -20 },
+    { label: "DevOps Consultant", img: "/pillar-consultant.png", offset: 15 },
+    { label: "Full Stack Dev", img: "/pillar-workflow.png", offset: -40 },
   ];
 
   const officialBadges = [
-    { src: "/badge-kcna.png", label: "KCNA" },
-    { src: "/badge-lfs250.png", label: "LFS250" }
+    { src: "/badge-aws-sap.png", label: "AWS Certified" },
+    { src: "/badge-cka.png", label: "CKA Certified" },
   ];
 
   const allProjects = [
-    { title: "Betterflow by BetterQA", cat: "AUTOMATION", year: "2025", desc: "Enterprise workflow and process automation platform at BetterQA.", img: "/images/projects/betterflow-betterqa.png" },
-    { title: "AI-SDR Outreach Tool", cat: "AUTOMATION", year: "2025", desc: "AI-powered sales development and outreach tooling built at BetterQA.", img: "/images/projects/ai-sdr-betterqa.png" },
-    { title: "Tajilabs Kenya Website", cat: "DEVOPS", year: "2024", desc: "Modern web development company website with integrated CI/CD and WooCommerce.", img: "/images/projects/tajilabs.png" },
-    { title: "Remedy School OS", cat: "PRODUCTS", year: "2024", desc: "Full-stack school operating system (Admissions, Fees, M-Pesa, Parent Portal).", img: "/images/products/remedy.png" },
-    { title: "Liafro International Store", cat: "SHOPIFY", year: "2023", desc: "Shopify store with DHL and Fargo logistics integrations and duties calculations.", img: "/images/projects/liafro-kenya.png" },
-    { title: "Hala Nairobi", cat: "WEB", year: "2023", desc: "Restaurant hospitality platform with online ordering and table reservations.", img: "/images/projects/hala.png" },
-    { title: "DevLog Standups", cat: "PRODUCTS", year: "2024", desc: "Async standups that surface GitHub activity and blockers in Slack.", img: "/images/products/devlog.png" },
-    { title: "Gap Talent Partners", cat: "AUTOMATION", year: "2024", desc: "HR recruitment platform with website, cloud hosting, and workflow automation.", img: "/images/projects/gap-talent-partners.png" },
-    { title: "Remedy – Grafana", cat: "PRODUCTS", year: "2024", desc: "Operational dashboards for metrics, health checks, and usage visibility.", img: "/images/projects/remedy-grafana.png" },
-    { title: "Errorlytic Diagnostics", cat: "PRODUCTS", year: "2024", desc: "Smart diagnostic system for garages: fault codes, quotes, and vehicle history.", img: "/images/products/errorlytic.png" },
-    { title: "Amrutt Kenya Headless", cat: "WEB", year: "2024", desc: "Headless e-commerce with Elasticsearch and Cloudflare Workers.", img: "/images/projects/amrutt-headless.png" },
-    { title: "Zuri Boilerplate", cat: "PRODUCTS", year: "2024", desc: "Production-ready headless WordPress starter with Vue.js and Docker.", img: "/images/products/zuri.png" },
-    { title: "Nelson Haus Real Estate", cat: "WEB", year: "2024", desc: "Modern real estate platform with property listings and virtual tours.", img: "/images/projects/nelson-haus.png" },
-    { title: "Loan Onboard Automation", cat: "AUTOMATION", year: "2023", desc: "Automated client onboarding system for financial institutions.", img: "/images/projects/lendbucks.png" },
-    { title: "N8N Workflow Platform", cat: "AUTOMATION", year: "2024", desc: "Business process automation platform connecting 200+ services.", img: "/images/projects/n8n.png" },
-    { title: "MSGN & Partners", cat: "WEB", year: "2023", desc: "Professional firm website with client portal and document management.", img: "/images/projects/msgn.png" },
-    { title: "AJiri Interview Auto", cat: "PRODUCTS", year: "2024", desc: "HR interview automation: scheduling, calendar sync, and tracking.", img: "/images/products/ajiri.png" },
-    { title: "TajiRent Management", cat: "PRODUCTS", year: "2024", desc: "Property management system with rent collection and landlord reporting.", img: "/images/products/taji-rent.png" },
-    { title: "Pipo Payroll System", cat: "PRODUCTS", year: "2024", desc: "KRA-compliant automated payroll with statutory exports and payslips.", img: "/images/products/pipo.png" },
-    { title: "Mensbestbasics UK", cat: "SHOPIFY", year: "2024", desc: "Shopify store for UK retail with custom theme and backend extensions.", img: "/images/projects/mensbestbasics-shopify.png" },
-    { title: "Purity Sang Advocates", cat: "WEB", year: "2024", desc: "Law firm website for Purity Sang Advocates in Kenya.", img: "/images/projects/puritysangadvocates.png" },
-    { title: "JK Ventures Portfolios", cat: "WEB", year: "2024", desc: "Investment consulting platform with portfolio analytics dashboard.", img: "/images/projects/jk-vantures.png" },
-    { title: "Qwetu Sacco Member Portal", cat: "WEB", year: "2023", desc: "Financial cooperative portal with member management and loans.", img: "/images/projects/qwetu-sacco.png" },
-    { title: "Tikvah Center LMS", cat: "WEB", year: "2023", desc: "Educational website with course management and student portal.", img: "/images/projects/tikvah.png" },
-    { title: "Pension Pilot Platform", cat: "AUTOMATION", year: "2024", desc: "Pension consolidation platform for tracking multiple retirement accounts.", img: "/images/projects/pension-pilot.png" },
-    { title: "Amrutt Kenya E-Commerce", cat: "WEB", year: "2023", desc: "WooCommerce store with bulk SMS and WhatsApp retail integration.", img: "/images/projects/amrutt-kenya.png" }
+    { title: "Verifay Web App", cat: "FINTECH", year: "2024", desc: "Digital trust and verification platform for high-security environments.", img: "/images/projects/betterflow-betterqa.png" },
+    { title: "Greenspoon Loyalty", cat: "COMMERCE", year: "2023", desc: "Enterprise loyalty engine processing millions in transactional value.", img: "/work-greenspoon.png" },
+    { title: "Turality AI Cloud", cat: "AI/ML", year: "2024", desc: "Serverless infrastructure for large language model deployment.", img: "/images/projects/remedy-grafana.png" },
+    { title: "Amrutt Kenya", cat: "WEB", year: "2023", desc: "WooCommerce store with bulk SMS and WhatsApp retail integration.", img: "/images/projects/amrutt-kenya.png" },
+    { title: "BetterFlow", cat: "AUTOMATION", year: "2024", desc: "Workflow automation and pipeline orchestration for tech teams.", img: "/images/projects/n8n.png" }
   ];
 
-  const experience = [
-    { title: "DevOps Engineer Consultant", company: "BetterQA | Cluj, Romania", date: "Sept 2025 – Present", desc: "Building scalable test automation frameworks and optimizing CI/CD pipelines for enterprise clients." },
-    { title: "Software Engineer – DevOps", company: "Greenspoon Kenya", date: "Nov 2022 – Sept 2025", desc: "Led DevOps projects including loyalty plugins, CI/CD adoption, and infrastructure monitoring." },
-    { title: "DevOps & Cloud Engineer", company: "Turality | US (Remote)", date: "Aug 2024 – Mar 2025", desc: "Migrated services to AWS ECS Fargate, automated infra with Terraform, and built Grafana dashboards." },
-    { title: "Founder & DevOps Engineer", company: "TajiLabs, Nairobi", date: "Jan 2019 – Nov 2022", desc: "Scaled a DevOps consultancy delivering cloud and e-commerce solutions to 15+ organizations." },
-    { title: "Full Stack Software Engineer", company: "OboTech Solutions", date: "Jul 2019 – Apr 2022", desc: "Built request management and fleet dispatch systems for logistics and fintech groups." }
+  const expertiseCategories = [
+    { id: "devops", title: "DevOps & Cloud", icon: <Server size={28} />, skills: ["Jenkins", "Terraform", "Docker", "GitLab CI", "GitHub Actions", "Ansible", "AWS", "Kubernetes"] },
+    { id: "backend", title: "Backend Development", icon: <Cpu size={28} />, skills: ["Node.js", "Express.js", "REST APIs", "Python", "PHP", "Laravel"] },
+    { id: "ai-ml", title: "AI & Machine Learning", icon: <Brain size={28} />, skills: ["LLM Apps", "RAG & Vector DBs", "Prompt Engineering", "scikit-learn", "Pandas", "MLOps"] },
+    { id: "automation", title: "Automation", icon: <Zap size={28} />, skills: ["Bash", "Python Scripting", "Go", "CI/CD Pipelines"] },
+    { id: "data", title: "Data & Databases", icon: <Database size={28} />, skills: ["PostgreSQL", "MySQL", "MongoDB", "DB Tuning"] },
+    { id: "frontend", title: "Frontend", icon: <Layout size={28} />, skills: ["Vue.js", "Next.js", "TypeScript", "React"] }
   ];
 
-  const education = [
-    { degree: "MSc. Computing & Info Systems", school: "Strathmore University", date: "Ongoing", desc: "Focus on cloud infrastructure, DevOps automation, and applied AI in enterprise systems." },
+  const fullExperience = [
+    { role: "DevOps Engineer Consultant", company: "BetterQA | Remote (Romania)", date: "Sept 2025 – Present", desc: "Building scalable test automation frameworks and optimizing CI/CD pipelines.", points: ["Reduced manual QA by 65%", "Cut build cycles by 70%", "Fixed 30+ vulnerabilities"] },
+    { role: "Software Engineer – DevOps", company: "Greenspoon Kenya", date: "2022 – 2025", desc: "Led DevOps projects including loyalty plugins, CI/CD adoption, and infrastructure monitoring.", points: ["Built Greenspoon Loyalty Plugin", "Reduced deployment errors by 80%", "Optimized site load speed by 45%"] },
+    { role: "DevOps & Cloud Engineer", company: "Turality | Remote (US)", date: "2024 – 2025", desc: "Data-driven AI/ML startup support.", points: ["Cut hosting costs by 40% via AWS ECS", "Automated infra with Terraform", "Reduced diagnosis time via ELK stack"] },
+    { role: "Founder & DevOps Engineer", company: "TajiLabs", date: "2019 – 2022", desc: "Scaled a DevOps consultancy delivering solutions to 15+ organizations.", points: ["Partnered with 15+ organizations", "Migrated workloads to AWS/GCP", "Boosted client revenue by 40%"] },
+    { role: "Full Stack Software Engineer", company: "OboTech Solutions", date: "2019 – 2022", desc: "Built request management and fleet dispatch systems.", points: ["Request Management (500+ daily)", "Apollo Tours Dispatch System", "Fintech Sacco Automation"] },
+    { role: "IT Support Specialist Intern", company: "ICT Authority", date: "2019", desc: "Delivered ICT support under the Digital Literacy Program.", points: ["Supported 200+ staff", "Deployed 1,000+ devices", "Improved county workflows by 40%"] }
+  ];
+
+  const fullEducation = [
+    { degree: "MSc. Computing & Info Systems", school: "Strathmore University", date: "Ongoing", desc: "Focus on cloud infrastructure, DevOps automation, and applied AI." },
     { degree: "DevOps Engineering", school: "Moringa School", date: "2022 – 2023", desc: "Intensive program covering CI/CD, cloud architecture, and containerization." },
     { degree: "BSc. Computer Science", school: "Kibabii University", date: "2017 – 2022", desc: "Core focus on Software Engineering; co-led Google Developer Student Club." }
   ];
 
-  const services = [
-    { 
-      title: "Cloud Infrastructure", 
-      icon: <Server size={32} />, 
-      skills: ["Multi-cloud Architect", "Kubernetes", "Scalability"],
-      desc: "Building backbone infrastructure that glides as your user base explodes. Pure resilience."
-    },
-    { 
-      title: "DevOps Automation", 
-      icon: <Code size={32} />, 
-      skills: ["CI/CD Mastery", "GitOps", "Provisioning"],
-      desc: "Zero-touch deployment pipelines that turn complex releases into a non-event."
-    },
-    { 
-      title: "Resilient Security", 
-      icon: <Shield size={32} />, 
-      skills: ["IAM Hardening", "Compliance", "Observability"],
-      desc: "Hardening every node. From encryption-at-rest to real-time threat detection."
-    }
+  const certificationsData = [
+    "AWS Solutions Architect (Candidate)",
+    "Certified DevSecOps Engineer (Candidate)",
+    "AI & LLMs Self-Driven Learning (Turality)",
+    "DevOps Engineering (Moringa School)"
   ];
+
+  const communityEngagement = [
+    { title: "Infrastructure as Code Webinar", org: "Nairobi DevOps", date: "2024", icon: <Mic size={16} /> },
+    { title: "DevOps Workshop", org: "Technical University of Kenya", date: "2025", icon: <Users size={16} /> },
+    { title: "Google DSC Co-Lead", org: "Kibabii University", date: "2020-2021", icon: <Award size={16} /> }
+  ];
+
+  const lifestyleInterests = [
+    { item: "Cars & Turbo Builds", icon: <Car size={16} /> },
+    { item: "Piano & Music Composition", icon: <Music size={16} /> },
+    { item: "Tech for Social Impact", icon: <Zap size={16} /> }
+  ];
+
+  const personalContact = {
+    phone: "+254 706 673 348",
+    email: "me@omondijeff.dev",
+    location: "Nairobi, Kenya"
+  };
 
   const nextSection = () => currentSection < 3 && setCurrentSection(c => c + 1);
   const prevSection = () => currentSection > 0 && setCurrentSection(c => c - 1);
@@ -148,13 +141,13 @@ const App = () => {
       <motion.div 
         className="persistent-subject-wrapper"
         animate={{ 
-          x: currentSection === 0 ? "0%" : 
+          x: currentSection === 0 ? "15%" : 
              currentSection === 1 ? "-32%" : 
-             currentSection === 2 ? "65%" : "-52%",
+             currentSection === 2 ? "72%" : "-52%",
           scale: currentSection === 0 ? 1 : 
                  currentSection === 2 ? 1.05 : 0.85,
-          opacity: currentSection === 2 ? 0.2 : 
-                   currentSection === 3 ? 0.3 : 1
+          opacity: currentSection === 2 ? 0.15 : 
+                   currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
         transition={springConfig}
@@ -190,7 +183,7 @@ const App = () => {
         animate={{ x: `-${currentSection * 100}%` }}
         transition={springConfig}
       >
-        {/* SECTION 0: HERO (NO CHANGE) */}
+        {/* SECTION 0: HERO */}
         <div className="section">
           <section className="hero">
             <div className="halo" />
@@ -226,73 +219,56 @@ const App = () => {
                   exit={{ opacity: 0, x: -30 }}
                 >
                   <p className="hello">Hello, I'm</p>
-                  <h1 className="jeffrey-name grad-text">JEFFREY</h1>
-                  <p className="intro-text">Senior Platform Engineer & Founder with 5+ years experience building and scaling resilient cloud ecosystems and automation foundations.</p>
+                  <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
+                  <p className="intro-text">Senior Platform Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            <motion.div className="right-floating-stack creative" animate={{ opacity: currentSection === 0 ? 1 : 0, x: currentSection === 0 ? 0 : 30 }}>
-              {experienceStats.map((p, idx) => (
-                <div key={idx} className="p-card-dynamic" style={{ transform: `translateX(${p.offset}px)` }}>
-                  <div className="p-thumb glass-style"><img src={p.img} alt={p.label} /></div>
-                  <div className="p-badge mono">{p.label}</div>
-                </div>
-              ))}
-            </motion.div>
+            <div className="hero-footer-left">
+              <div className="hall-of-fame glass-premium">
+                <div className="hall-item mono uppercase small">Platform & DEVOPS Engineer</div>
+              </div>
+            </div>
+
+            <div className="hero-footer-right">
+              <div className="socials">
+                <a href="mailto:jeffomondi.eng@gmail.com" className="social-circle blue"><Mail size={24} /></a>
+                <a href="https://github.com/omondijeff" className="social-circle"><GithubIcon size={24} /></a>
+                <a href="https://linkedin.com/in/omondijeff" className="social-circle"><LinkedinIcon size={24} /></a>
+              </div>
+            </div>
           </section>
-
-          <div className="hero-footer-left">
-            <div className="hall-of-fame">
-              {officialBadges.map((badge, idx) => (
-                <div key={idx} className="hall-item" style={{ width: 85, h: 85 }}><img src={badge.src} alt={badge.label} width={85} height={85} style={{ objectFit: 'contain' }} /></div>
-              ))}
-            </div>
-          </div>
-
-          <div className="hero-footer-right">
-            <div className="socials">
-              <a href="mailto:jeffomondi.eng@gmail.com" className="social-circle blue"><Mail size={24} /></a>
-              <a href="https://github.com/omondijeff" className="social-circle"><GithubIcon size={24} /></a>
-              <a href="https://linkedin.com/in/omondijeff" className="social-circle"><LinkedinIcon size={24} /></a>
-            </div>
-          </div>
         </div>
 
-        {/* SECTION 1: WORKS - COMPREHENSIVE VIEW WITH ALL 26+ PROJECTS */}
-        <div className="section works-view scrollable">
-          <div className="grain-overlay" />
-          
-          <div className="works-scroll-container">
+        {/* SECTION 1: WORKS */}
+        <div className="section works-view">
+          <div className="works-scroll-container scroll-y">
             <div className="works-header-sticky">
-              <h2 className="section-title grad-text">Recent <span>Works</span></h2>
-               <span className="works-count mono">OVER 26+ PROJECTS DELIVERED</span>
+               <span className="works-count mono uppercase">Selected Projects (/05)</span>
+               <h2 className="section-title grad-text">RECENT <span>WORKS</span></h2>
             </div>
-            
             <div className="works-full-grid">
               {allProjects.map((w, idx) => (
                 <motion.div 
                   key={idx} 
-                  className="work-card-premium large"
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={currentSection === 1 ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: idx * 0.03 }}
-                  whileHover={{ y: -10, rotateZ: idx % 2 === 0 ? 1 : -1 }}
+                  className="work-card-premium" 
+                  transition={{ delay: 0.2 + idx * 0.1 }}
+                  whileHover={{ y: -10, scale: 1.01 }}
                 >
                   <div className="work-thumb-p">
-                    <img 
-                       src={w.img} 
-                       alt={w.title} 
-                       onError={(e) => { e.target.src = "/work-betterflow.png"; e.target.style.filter = "grayscale(100%)"; }}
-                    />
+                    <img src={w.img} alt={w.title} />
                   </div>
                   <div className="work-info-p">
                     <div className="work-top">
                       <span className="work-year mono">{w.year}</span>
-                      <span className="work-meta mono">{w.cat}</span>
+                      <span className="work-meta mono uppercase">{w.cat}</span>
                     </div>
                     <h3 className="mono">{w.title}</h3>
+                    <div className="work-labels">
+                      <span className="skill-pill mono">REACT</span>
+                      <span className="skill-pill mono">TAILWIND</span>
+                    </div>
                     <p>{w.desc}</p>
                   </div>
                 </motion.div>
@@ -301,99 +277,142 @@ const App = () => {
           </div>
         </div>
 
-        {/* SECTION 2: SERVICES (NO CHANGE) */}
-        <div className="section services-view">
+        {/* SECTION 2: SERVICES */}
+        <div className="section services-view scroll-y">
           <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           <div className="services-container-inner">
              <motion.div className="services-header" animate={{ opacity: currentSection === 2 ? 1 : 0, x: currentSection === 2 ? 0 : -30 }}>
-               <h2 className="section-title mono grad-text">TECHNICAL <span>CAPABILITIES</span></h2>
-               <p className="service-intro">Delivering resilient ecosystems through the lens of performance and security.</p>
+               <h2 className="section-title grad-text">TECHNICAL <span>CAPABILITIES</span></h2>
+               <p className="service-intro">Highly categorized expertise across the full engineering stack.</p>
              </motion.div>
-             <div className="services-grid-asym">
-               {services.map((s, idx) => (
-                 <motion.div key={idx} className={`service-card glass-premium item-${idx}`} transition={{ delay: 0.2 + idx * 0.2 }} whileHover={{ y: -15, scale: 1.02 }} animate={currentSection === 2 ? { opacity: 1, y: 0 } : {}}>
-                   <div className="service-icon-box">{s.icon}</div>
-                   <h3 className="mono">{s.title}</h3>
-                   <div className="service-labels">
-                     {s.skills.map((skill, si) => <span key={si} className="s-pill">{skill}</span>)}
+             <div className="expertise-grid">
+               {expertiseCategories.map((cat, idx) => (
+                 <motion.div 
+                   key={idx} 
+                   className="expertise-card glass-premium" 
+                   transition={{ delay: 0.1 + idx * 0.1 }}
+                   animate={currentSection === 2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                   whileHover={{ y: -10, scale: 1.02 }}
+                 >
+                   <div className="expertise-header">
+                     {cat.icon}
+                     <h3 className="mono">{cat.title}</h3>
                    </div>
-                   <p className="service-desc">{s.desc}</p>
+                   <div className="skills-pill-cloud">
+                     {cat.skills.map((skill, si) => <span key={si} className="skill-pill">{skill}</span>)}
+                   </div>
                  </motion.div>
                ))}
              </div>
           </div>
         </div>
 
-        {/* SECTION 3: ABOUT ME - TABBED EXPERIENCE & EDUCATION */}
-        <div className="section about-view">
+        {/* SECTION 3: ABOUT ME */}
+        <div className="section about-view scroll-y">
           <div className="halo top-right" />
           <div className="grain-overlay" />
           
-          <div className="about-detailed-container">
-            <div className="about-fixed-side">
-               <h2 className="section-title mono grad-text">JEFFREY <span>OMONDI</span></h2>
-               <div className="about-bio-short">
-                  <p className="bio-highlight">Developer at heart, Platform Engineer by trade.</p>
-                  <div className="about-stat-row">
-                    <div className="a-stat"><span className="mono">5+</span> Years</div>
-                    <div className="a-stat"><span className="mono">100+</span> Deploys</div>
-                    <div className="a-stat"><span className="mono">99.9%</span> SLA</div>
+          <div className="about-modern-layout">
+            <div className="about-hero-section">
+              <h2 className="section-title grad-text">Building <span>Foundations</span></h2>
+              <div className="about-intro-grid">
+                <div className="main-bio">
+                  <p className="bio-large">
+                    I'm <strong>Jeffrey Omondi</strong>, a Senior Platform Engineer bridging software and infrastructure to build systems that matter.
+                  </p>
+                  <p className="bio-sub">
+                    Specializing in CI/CD, cloud infrastructure, and developer productivity, I help teams ship faster, safer, and smarter.
+                  </p>
+                </div>
+                <div className="about-stats-bento">
+                  <div className="a-stat-bento glass-premium">
+                    <span className="stat-num grad-text">5+</span>
+                    <span className="stat-label-b">Years Exp</span>
                   </div>
-               </div>
-
-               <div className="about-tabs">
-                 <button className={`tab-btn mono ${aboutTabIndex === 0 ? 'active' : ''}`} onClick={() => setAboutTabIndex(0)}>
-                   <Briefcase size={16} /> EXPERIENCE
-                 </button>
-                 <button className={`tab-btn mono ${aboutTabIndex === 1 ? 'active' : ''}`} onClick={() => setAboutTabIndex(1)}>
-                   <GraduationCap size={16} /> EDUCATION
-                 </button>
-               </div>
+                  <div className="a-stat-bento glass-premium">
+                    <span className="stat-num grad-text">89+</span>
+                    <span className="stat-label-b">Projects</span>
+                  </div>
+                  <div className="a-stat-bento glass-premium">
+                    <span className="stat-num grad-text">77+</span>
+                    <span className="stat-label-b">Clients</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="about-details-content">
-               <AnimatePresence mode="wait">
-                 {aboutTabIndex === 0 ? (
-                   <motion.div 
-                     key="exp" 
-                     className="exp-list"
-                     initial={{ opacity: 0, x: 20 }}
-                     animate={{ opacity: 1, x: 0 }}
-                     exit={{ opacity: 0, x: -20 }}
-                   >
-                     {experience.map((job, idx) => (
-                       <div key={idx} className="timeline-item">
-                         <div className="time-marker mono">{job.date}</div>
-                         <div className="time-content">
-                           <h4>{job.title}</h4>
-                           <h5>{job.company}</h5>
-                           <p>{job.desc}</p>
-                         </div>
-                       </div>
-                     ))}
-                   </motion.div>
-                 ) : (
-                   <motion.div 
-                     key="edu" 
-                     className="exp-list"
-                     initial={{ opacity: 0, x: 20 }}
-                     animate={{ opacity: 1, x: 0 }}
-                     exit={{ opacity: 0, x: -20 }}
-                   >
-                     {education.map((edu, idx) => (
-                       <div key={idx} className="timeline-item education">
-                         <div className="time-marker mono">{edu.date}</div>
-                         <div className="time-content">
-                           <h4>{edu.degree}</h4>
-                           <h5>{edu.school}</h5>
-                           <p>{edu.desc}</p>
-                         </div>
-                       </div>
-                     ))}
-                   </motion.div>
-                 )}
-               </AnimatePresence>
+            <div className="about-content-main">
+              <div className="about-timeline-column">
+                <h3 className="column-title mono uppercase"><Briefcase size={20} /> Professional Journey</h3>
+                <div className="vertical-timeline">
+                  {fullExperience.map((job, idx) => (
+                    <div key={idx} className="v-timeline-item">
+                      <div className="v-marker"></div>
+                      <div className="v-content glass-premium">
+                        <span className="v-date mono">{job.date}</span>
+                        <h4>{job.role}</h4>
+                        <p className="v-company">{job.company}</p>
+                        <ul className="v-points">
+                          {job.points.map((p, pi) => <li key={pi}>{p}</li>)}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="about-secondary-column">
+                <div className="edu-section-block">
+                  <h3 className="column-title mono uppercase"><GraduationCap size={20} /> Education</h3>
+                  {fullEducation.map((edu, idx) => (
+                    <div key={idx} className="edu-item-compact glass-premium">
+                      <h5>{edu.degree}</h5>
+                      <p>{edu.school}</p>
+                      <span className="edu-date mono">{edu.date}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="cert-section-block">
+                  <h3 className="column-title mono uppercase"><Award size={20} /> Certifications</h3>
+                  <div className="cert-grid-compact">
+                    {certificationsData.map((cert, idx) => (
+                      <div key={idx} className="cert-item-tag glass-premium">{cert}</div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="comm-section-block">
+                  <h3 className="column-title mono uppercase"><Users size={20} /> Community</h3>
+                  {communityEngagement.map((comm, idx) => (
+                    <div key={idx} className="comm-item-compact border-left-grad">
+                      <div className="comm-head">{comm.icon} <span>{comm.org}</span></div>
+                      <p>{comm.title}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="lifestyle-section-block">
+                  <h3 className="column-title mono uppercase"><Zap size={20} /> Beyond Code</h3>
+                  <div className="lifestyle-grid-compact">
+                    {lifestyleInterests.map((life, idx) => (
+                      <div key={idx} className="life-item-compact glass-premium">
+                        {life.icon} <span>{life.item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="about-footer-connect glass-premium">
+               <h3 className="grad-text">Let's connect and build the future.</h3>
+               <div className="contact-pills">
+                 <span className="c-pill"><Mail size={16} /> {personalContact.email}</span>
+                 <span><Smartphone size={16} /> {personalContact.phone}</span>
+                 <span><MapPin size={16} /> {personalContact.location}</span>
+               </div>
             </div>
           </div>
         </div>
