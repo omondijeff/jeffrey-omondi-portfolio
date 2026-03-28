@@ -169,10 +169,10 @@ const App = () => {
         animate={{ 
           x: currentSection === 0 ? "15%" : 
              currentSection === 1 ? "-32%" : 
-             currentSection === 2 ? "72%" : "-52%",
+             currentSection === 2 ? "120%" : "-52%",
           scale: currentSection === 0 ? 1 : 
-                 currentSection === 2 ? 1.05 : 0.85,
-          opacity: currentSection === 2 ? 0.15 : 
+                 currentSection === 2 ? 0.8 : 0.85,
+          opacity: currentSection === 2 ? 0 : 
                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
@@ -323,22 +323,25 @@ const App = () => {
         <div className="section services-view scroll-y">
           <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
-          <div className="services-container-inner">
-             <motion.div className="services-header" animate={{ opacity: currentSection === 2 ? 1 : 0, x: currentSection === 2 ? 0 : -30 }}>
-               <h2 className="section-title grad-text">TECHNICAL <span>CAPABILITIES</span></h2>
-               <p className="service-intro">Highly categorized expertise across the full engineering stack.</p>
-             </motion.div>
-             <div className="expertise-grid">
+          <div className="services-scroll-container">
+            <div className="services-header-sticky">
+               <span className="works-count mono uppercase">Capabilities ({expertiseCategories.length})</span>
+               <h2 className="section-title grad-text">TECHNICAL <span>EXPERTISE</span></h2>
+               <p className="service-intro">Highly categorized engineering stack across the full software lifecycle.</p>
+            </div>
+             
+             <div className="services-full-grid">
                {expertiseCategories.map((cat, idx) => (
                  <motion.div 
                    key={idx} 
                    className="expertise-card glass-premium" 
-                   transition={{ delay: 0.1 + idx * 0.1 }}
-                   animate={currentSection === 2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                   initial={{ opacity: 0, y: 20 }}
+                   animate={{ opacity: 1, y: 0 }}
+                   transition={{ delay: 0.1 + idx * 0.05 }}
                    whileHover={{ y: -10, scale: 1.02 }}
                  >
                    <div className="expertise-header">
-                     {cat.icon}
+                     <div className="expertise-icon-wrapper">{cat.icon}</div>
                      <h3 className="mono">{cat.title}</h3>
                    </div>
                    <div className="skills-pill-cloud">

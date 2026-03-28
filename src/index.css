@@ -277,52 +277,81 @@ body {
 /* --- Services Section: Expertise Grid --- */
 .services-view { 
   padding: 180px 8% 80px; 
-  background: #fff; 
+  background: #fdfdfd; 
   position: relative; 
   overflow: hidden; 
 }
 
-.services-container-inner { 
-  width: 100%;
-  max-width: 1400px;
+.services-scroll-container {
+  width: 95%;
   margin: 0 auto;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
 }
 
-.services-header {
-  margin-top: 100px;
-  margin-bottom: 2rem;
+.services-header-sticky {
+  position: sticky;
+  top: 0;
+  background: #fdfdfd;
+  padding-bottom: 3.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.expertise-grid {
+.service-intro {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.services-full-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  margin-top: 4rem;
-  padding-bottom: 60px;
+  padding-bottom: 100px;
 }
 
 .expertise-card {
-  padding: 3.5rem;
-  border-radius: 40px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(241, 245, 249, 1);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.03);
+  padding: 2.8rem;
+  border-radius: 44px;
+  background: #fff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 15px 45px #00000006;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
 }
 
 .expertise-header {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.expertise-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
   color: var(--accent-primary);
 }
 
 .expertise-header h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
   color: #1e293b;
+  letter-spacing: -0.02em;
 }
 
 .skills-pill-cloud {
@@ -332,20 +361,25 @@ body {
 }
 
 .skill-pill {
-  padding: 0.7rem 1.4rem;
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  padding: 0.6rem 1.2rem;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
   border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #64748b;
   transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .expertise-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 25px 60px rgba(0, 122, 255, 0.08);
+}
+
+.expertise-card:hover .skill-pill {
   background: #fff;
-  border-color: #38bdf844;
-  box-shadow: 0 30px 70px rgba(56, 189, 248, 0.1);
 }
 
 /* --- About Section: Modern Layout --- */
