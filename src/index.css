@@ -1337,7 +1337,7 @@ body {
   
   .hero-content {
     left: 50% !important;
-    top: 58% !important; /* Slightly higher than before to clear bottom bar */
+    top: 52% !important; /* Raised slightly to clear bottom-tiering */
     transform: translate(-50%, -50%) !important;
     text-align: center;
     width: 90%;
@@ -1355,17 +1355,20 @@ body {
   }
 
   .jeffrey-name {
-    font-size: clamp(3.2rem, 14vw, 4.2rem) !important;
+    font-size: clamp(2.8rem, 12vw, 3.8rem) !important; /* Scaled down further for safety */
     letter-spacing: -2px !important;
-    margin-bottom: 1.8rem !important;
+    margin-bottom: 1.2rem !important; /* Tighter margin */
     line-height: 0.88 !important;
   }
 
   .typewriter-container {
-    font-size: 1.15rem !important; /* Slightly smaller to clear the face more effectively */
+    font-size: 1.1rem !important;
     height: 1.6rem !important;
+    width: 100% !important;
+    max-width: 290px !important; /* Ensure enough width for "Engineer" */
     justify-content: center !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.4rem !important;
+    white-space: nowrap !important;
   }
 
   .intro-text {
@@ -1390,14 +1393,15 @@ body {
   }
 
   .hero-logos-ribbon {
-    margin-top: 1.5rem !important; /* Tightened margin */
+    margin-top: 1rem !important;
     width: 100% !important;
     align-items: center !important;
+    scale: 0.9; /* Slightly smaller logos on mobile */
   }
 
   .hero-footer-right {
     position: absolute !important;
-    bottom: 105px !important; /* Raised to clear hint/dots */
+    bottom: 92px !important; /* Tier 3: Socials */
     right: 50% !important;
     transform: translateX(50%) !important;
     width: 100% !important;
@@ -1444,12 +1448,12 @@ body {
 
 .mobile-nav-hint {
   position: absolute;
-  bottom: 62px; /* Centered between socials and dots */
+  bottom: 54px; /* Tier 2: Hint */
   left: 50%;
   transform: translateX(-50%);
   z-index: 4000;
   color: #1e293b;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   letter-spacing: 0.12em;
   font-weight: 800;
   pointer-events: none;
@@ -1459,7 +1463,7 @@ body {
   opacity: 0.45;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(4px);
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 20px;
 }
 
@@ -1470,7 +1474,7 @@ body {
 /* --- Restore Mobile Navigation Dots --- */
 .mobile-nav-dots {
   position: absolute;
-  bottom: 15px;
+  bottom: 12px; /* Tier 1: Dots */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
