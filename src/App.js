@@ -288,9 +288,9 @@ const App = () => {
              "-52%",
           scale: (currentSection === 0) ? 1 : 
                  (currentSection === 2) ? 0.72 : 0.85,
-          opacity: (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? 0 :
+          opacity: (isWorksMobile && currentSection !== 0) ? 0 :
+                   currentSection === 1 ? 0 : 
                    currentSection === 2 ? 0.9 : 
-                   (isWorksMobile && currentSection === 3) ? 0.15 : // Even lower on mobile about
                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
