@@ -389,7 +389,7 @@ const App = () => {
                 <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
                 <div className="intro-text">
                   <div className="typewriter-container">
-                    <Typewriter texts={["Senior DevOps Engineer", "Software Engineer", "AI Engineer"]} />
+                    <Typewriter texts={["Senior DevOps Engineer", "Software Engineer", "AI Engineer", "Workflow Automation Specialist"]} />
                   </div>
                   <p className="intro-sub">Building high-performance, resilient cloud ecosystems.</p>
                 </div>
