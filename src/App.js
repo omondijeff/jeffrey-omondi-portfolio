@@ -353,8 +353,8 @@ const App = () => {
                 <div className="hero-logos-ribbon">
                   <span className="mono uppercase small opacity-50">Proven Impact At</span>
                   <div className="hero-logos-scroll">
-                    {fullExperience.map(job => (
-                      <img key={job.company} src={job.logo} alt={job.company} className="hero-logo-item" title={job.company} />
+                    {[...fullExperience, ...fullExperience].map((job, idx) => (
+                      <img key={idx} src={job.logo} alt={job.company} className="hero-logo-item" title={job.company} />
                     ))}
                   </div>
                 </div>

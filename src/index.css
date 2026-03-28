@@ -1193,13 +1193,26 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .hero-logos-scroll {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
-  flex-wrap: wrap;
+  gap: 4.5rem;
+  width: max-content;
+  animation: logo-marquee 40s linear infinite;
+}
+
+@keyframes logo-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero-logos-scroll:hover {
+  animation-play-state: paused;
 }
 
 .hero-logo-item {
