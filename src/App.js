@@ -127,12 +127,54 @@ const App = () => {
   ];
 
   const fullExperience = [
-    { role: "DevOps Engineer", company: "BetterQA | Remote (Romania)", date: "May 2025 – Present", desc: "Leading DevOps architecture for BetterFlow platform.", points: ["Architected multi-tenant SaaS on AWS/GCP with Terraform", "Built Kubernetes-based parallel test orchestration engine", "Established observability standards (Prometheus, Grafana, Loki)", "Engineered CI/CD pipelines with GitHub Actions & Jenkins"] },
-    { role: "Software Engineer DevOps", company: "Greenspoon Kenya", date: "Nov 2022 – April 2025", desc: "Led platform engineering and infrastructure strategy.", points: ["Built Internal Developer Platform (IDP) with Python automation", "Reduced deployment time from hours to minutes via Jenkins", "Managed AWS infrastructure for production workloads", "Architected Paperless logistics and warehouse systems"] },
-    { role: "DevOps Engineer AI/ML", company: "Turality LLC | Remote (US)", date: "Nov 2023 – Feb 2024", desc: "Led AI infrastructure for social automation platform.", points: ["Engineered LLM inference pipelines with Python & Boto3", "Architected resilient real-time LLM inference data pipelines", "Partnered with Data Science for automated drift detection"] },
-    { role: "Founder & DevOps Engineer", company: "TajiLabs", date: "Jan 2019 – Present", desc: "DevOps consultancy for enterprises in East Africa.", points: ["Owned cloud architecture & SRE strategy for 15+ clients", "Digitized warehouse operations for Bio Foods Kenya", "Led architecture for Remedy EdTech SaaS platform"] },
-    { role: "Full Stack Software Engineer", company: "OboTech Solutions", date: "July 2019 – April 2022", desc: "Developed cloud systems for fintech and enterprise clients.", points: ["Led development of CompactHydro Management System", "Automated reconciliation for SACCO/MFI platforms", "Deployed containerized apps with Docker/CI/CD pipelines"] },
-    { role: "IT Support Specialist Intern", company: "ICT Authority", date: "2019", desc: "ICT support under the Digital Literacy Program.", points: ["Supported 200+ staff and 1,000+ devices", "Improved county workflows by 40%", "Coordinated hardware & network deployments"] }
+    { 
+      role: "Senior DevOps Engineer", 
+      company: "BetterQA", 
+      logo: "assets/logos/betterqa.svg",
+      date: "May 2025 – Present", 
+      desc: "Leading DevOps architecture for BetterFlow—global multi-tenant SaaS for parallel browser test orchestration.", 
+      points: ["Architected Kubernetes-native test runners with auto-scaling capabilities on AWS/GCP", "Implemented enterprise-grade observability utilizing Prometheus, Grafana, and Loki", "Established standardized CI/CD deployment patterns for global infrastructure"] 
+    },
+    { 
+      role: "Software Engineer DevOps", 
+      company: "Greenspoon Kenya", 
+      logo: "assets/logos/greenspoon.svg",
+      date: "Nov 2022 – April 2025", 
+      desc: "Directed platform engineering strategy reporting directly to CTO during 96% growth phase.", 
+      points: ["Architected and delivered Internal Developer Platform (IDP) with automated 'Golden Paths'", "Led end-to-end logistics, procurement, and transport/dispatch systems digitizing the entire ecosystem", "Managed AWS infrastructure lifecycle, reducing deployment lead time from hours to minutes"] 
+    },
+    { 
+      role: "DevOps Engineer AI/ML", 
+      company: "Turality LLC", 
+      logo: "assets/logos/turality.png",
+      date: "Nov 2023 – Feb 2024", 
+      desc: "Engineered high-performance infrastructure for social automation and AI inference.", 
+      points: ["Architected specialized LLM inference pipelines with GPU resource orchestration via Python/Boto3", "Implemented resilient, auto-scaling data pipelines for real-time generative AI inference", "Partnered with Data Science to standardize MLOps workflows and automated drift detection"] 
+    },
+    { 
+      role: "Founder & DevOps Engineer", 
+      company: "TajiLabs", 
+      logo: "assets/logos/tajilabs.png",
+      date: "Jan 2019 – Present", 
+      desc: "Founded and scaling a DevOps consultancy focused on cloud architecture and SRE strategy.", 
+      points: ["Directed cloud architecture and SRE strategy for 15+ organizations across East Africa", "Architected TajiTrack: cloud-native GPS tracking/fleet management for financial institutions", "Built secure Edtech SaaS for Remedy and digitized supply chains using Python/n8n automation"] 
+    },
+    { 
+      role: "Full Stack Software Engineer", 
+      company: "OboTech Solutions", 
+      logo: "assets/logos/obotech.png",
+      date: "July 2019 – April 2022", 
+      desc: "Architected digital-first platforms for fintech and government institutions.", 
+      points: ["Led development of government Request Management Systems for NTSA Kenya", "Automated procurement and reconciliation workflows for high-volume SACCO/MFI platforms", "Deployed containerized microservices and CI/CD pipelines for mission-critical apps"] 
+    },
+    { 
+      role: "IT Support Specialist", 
+      company: "ICT Authority", 
+      logo: "assets/logos/icta.png",
+      date: "2019", 
+      desc: "Supported Digital Literacy Program under the Ministry of ICT, Government of Kenya.", 
+      points: ["Coordinated deployment of 1,000+ devices and provisioned bare metal server infrastructure", "Supported 200+ staff at the ground level, maintaining 99% uptime for learning platforms", "Developed hardware and network deployment strategies for the national ICT initiative"] 
+    }
   ];
 
   const fullEducation = [
@@ -307,6 +349,15 @@ const App = () => {
                 <p className="hello">Hello, I'm</p>
                 <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
                 <p className="intro-text">Senior DevOps Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
+                
+                <div className="hero-logos-ribbon">
+                  <span className="mono uppercase small opacity-50">Proven Impact At</span>
+                  <div className="hero-logos-scroll">
+                    {fullExperience.map(job => (
+                      <img key={job.company} src={job.logo} alt={job.company} className="hero-logo-item" title={job.company} />
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
@@ -474,7 +525,10 @@ const App = () => {
                       <div className="v-content glass-premium">
                         <div className="v-header">
                           <span className="v-date mono">{job.date}</span>
-                          <h4>{job.role}</h4>
+                          <div className="v-role-brand">
+                            <h4>{job.role}</h4>
+                            <img src={job.logo} alt={job.company} className="v-company-logo" />
+                          </div>
                           <p className="v-company">{job.company}</p>
                         </div>
                         <ul className="v-points">
