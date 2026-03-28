@@ -362,11 +362,6 @@ const App = () => {
             )}
           </AnimatePresence>
 
-          <div className="hero-footer-left">
-            <div className="hall-of-fame glass-premium">
-              <div className="hall-item mono uppercase small">Platform & DEVOPS Engineer</div>
-            </div>
-          </div>
 
           <div className="hero-footer-right">
             <div className="socials">
