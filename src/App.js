@@ -234,7 +234,6 @@ const App = () => {
       >
         {/* SECTION 0: HERO */}
         <section className="section hero">
-          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           
           {techLogos.map((logo, idx) => (
@@ -376,7 +375,6 @@ const App = () => {
 
         {/* SECTION 3: ABOUT */}
         <div className="section about-view scroll-y">
-          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           
           <div className="about-modern-layout">
