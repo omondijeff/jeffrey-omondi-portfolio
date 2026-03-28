@@ -96,8 +96,12 @@ body {
   flex: 0 0 100%;
   width: 100%;
   min-width: 100%;
+  max-width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden !important; /* Force containment of any internal drift */
+  box-sizing: border-box;
+}
   display: flex;
   align-items: center;
   justify-content: center;
@@ -466,11 +470,20 @@ body {
   }
 
   .services-view .services-section-title {
-    font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
-    letter-spacing: -0.04em !important;
-    margin-bottom: 0.8rem !important;
-    line-height: 1 !important;
-    text-align: center !important;
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.5rem !important;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+  .service-intro {
+    font-size: 0.9rem !important;
+    opacity: 0.7;
+    margin-bottom: 2rem !important;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .services-view .works-count {
@@ -490,16 +503,28 @@ body {
   }
 
   .services-view .expertise-card {
+    background: #ffffff !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid #f1f5f9;
+    border-radius: 32px !important;
+    padding: 2.5rem 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03) !important;
+    display: flex !important;
     flex-direction: column !important;
-    text-align: center !important;
-    border-radius: 24px !important;
-    padding: 2rem 1.5rem !important;
     align-items: center !important;
   }
 
-  .expertise-icon-side {
-    margin-right: 0 !important;
-    margin-bottom: 1.2rem !important;
+  .expertise-icon-wrapper {
+    background: #f8fafc !important;
+    color: var(--accent-primary) !important;
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 20px !important;
+    margin-bottom: 1.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .services-view .expertise-header {
@@ -1323,18 +1348,21 @@ body {
     border-radius: 20px !important;
   }
 
-  /* --- Unified Section Constraints for Mobile --- */
+  /* --- Final Alignment Lock for Mobile --- */
+  .sections-container {
+    width: 100% !important;
+    overflow: hidden !important;
+    display: flex !important;
+  }
+
   .section {
     width: 100% !important;
     min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
     height: 100% !important;
-    flex-shrink: 0 !important;
-    flex-grow: 0 !important;
-    padding: 90px 20px 80px !important; /* Uniform padding, slightly more bottom for dots */
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
+    padding: 100px 20px 80px !important;
+    overflow: hidden !important;
     text-align: center !important;
   }
 
