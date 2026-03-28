@@ -425,22 +425,22 @@ const App = () => {
                 <div className="main-bio">
                   <div className="about-label mono uppercase grad-text">The Journey</div>
                   <p className="bio-large">
-                    My journey didn't start in the cloud; it started in the trenches of IT support. 
+                    My career began in the literal infrastructure of the ICT Authority’s Digital Literacy Program—deploying 1,000+ devices.
                   </p>
                   <div className="bio-sub">
                     <p>
-                      Supporting 200+ users at the ICT Authority taught me a fundamental lesson: <strong>systems fail because they lack strong foundations.</strong> 
-                      Seeing the gap between human frustration and technical debt inspired me to stop just fixing systems and start engineering them for resilience.
+                      Supporting 200+ staff at the ground level taught me a fundamental truth: <strong>software is only as reliable as the foundation it’s built on.</strong> 
+                      Seeing the gap between user frustration and technical debt inspired me to stop just fixing systems and start engineering them for resilience.
                     </p>
                     <p>
-                      That drive led me to found <strong>TajiLabs</strong>, where I spent three years helping 15+ organizations scale their infrastructure. 
-                      As a founder, I had to wear every engineering hat, but I consistently found myself drawn back to the "how" of it all. 
-                      I realized my greatest impact wasn't just in building apps, but in building the <strong>platforms</strong> that made those apps stable, scalable, and fast.
+                      That drive fueled the creation of <strong>TajiLabs</strong>, where I spent three years scaling cloud architecture for 15+ organizations. 
+                      This founder-led journey was my sandbox for diversification—from digitizing warehouse logistics for Bio Foods to architecting secure Edtech SaaS. 
+                      It taught me that DevOps isn't just a technical role; it's a <strong>business strategy</strong> for speed and stability.
                     </p>
                     <p>
-                      Today, as a <strong>Senior DevOps Engineer</strong>, I bridge the gap between code and cloud. 
-                      I don't just automate; I design <strong>Agentic AI systems</strong> and cloud-native workflows that empower developers to ship at the speed of thought. 
-                      Every script I write is a continuation of that first realization: that the best systems are the ones you don't even know are there.
+                      This converged at <strong>Greenspoon</strong>, where I reported directly to the CTO to lead platform strategy during a period of 96% operational growth. 
+                      By building an <strong>Internal Developer Platform (IDP)</strong>, I didn't just automate pipelines; I created "Golden Paths" for our engineers to ship with confidence. 
+                      Today, at BetterQA, I continue this mission—architecting global, multi-tenant SaaS platforms and AI-driven workflows that treat infrastructure as a first-class product.
                     </p>
                   </div>
                 </div>
