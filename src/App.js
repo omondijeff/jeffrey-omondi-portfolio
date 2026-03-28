@@ -425,7 +425,7 @@ const App = () => {
                 <div className="main-bio">
                   <div className="about-label mono uppercase grad-text">The Journey</div>
                   <p className="bio-large">
-                    My career began in the literal infrastructure of the ICT Authority’s Digital Literacy Program—deploying 1,000+ devices and provisioning <strong>bare metal servers</strong>.
+                    My career began in the literal infrastructure of the <strong>ICT Authority (Ministry of ICT, Government of Kenya)</strong>—deploying 1,000+ devices and provisioning bare metal servers.
                   </p>
                   <div className="bio-sub">
                     <p>
