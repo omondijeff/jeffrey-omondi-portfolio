@@ -103,9 +103,10 @@ const App = () => {
   ];
 
   const experienceStats = [
-    { label: "Platform Engineer", img: "/pillar-cloud.png", offset: -20 },
-    { label: "DevOps Consultant", img: "/pillar-consultant.png", offset: 15 },
-    { label: "Full Stack Dev", img: "/pillar-workflow.png", offset: -40 },
+    { label: "Senior DevOps Engineer", img: "/pillar-cloud.png", offset: -20 },
+    { label: "Software Engineer", img: "/pillar-consultant.png", offset: 15 },
+    { label: "AI Engineer", img: "/pillar-workflow.png", offset: -40 },
+    { label: "Workflow Automation Specialist", img: "/pillar-cloud.png", offset: 10 },
   ];
 
 
@@ -307,7 +308,7 @@ const App = () => {
             transition={{ delay: 0.3 }}
           >
             <div className="belief-tag">I believe</div>
-            <h3 className="belief-text">"Sharing knowledge is as important as gaining it."</h3>
+            <h3 className="belief-text">"I believe in building systems that don't just work, but evolve—bridging the gap between robust infrastructure and intelligent software."</h3>
             
             <div className="roles-floating-list">
               {experienceStats.map((role, idx) => (
