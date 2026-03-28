@@ -443,9 +443,9 @@ body {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    padding-top: max(88px, calc(72px + env(safe-area-inset-top, 0px)));
+    padding-top: max(76px, calc(64px + env(safe-area-inset-top, 0px))); /* Reduced to match slim navbar */
     padding-left: max(12px, env(safe-area-inset-left, 0px));
-    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px)); /* Fixed typo: left -> right */
     padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   }
 
@@ -521,8 +521,9 @@ body {
   }
 
   .services-view .skill-pill {
-    font-size: 0.6rem;
-    padding: 0.28rem 0.65rem;
+    font-size: 0.72rem; /* Increased for legibility */
+    padding: 0.35rem 0.8rem;
+    font-weight: 600;
   }
 
   .services-view::after {
@@ -1425,53 +1426,6 @@ body {
     width: 38px !important; /* Smaller icons for more room */
     height: 38px !important;
   }
-}
-
-/* --- Mobile Nav Hint --- */
-.mobile-nav-hint {
-  position: absolute;
-  bottom: 55px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4000;
-  color: #1e293b;
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  font-weight: 800;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0.5;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(4px);
-  padding: 8px 16px;
-  border-radius: 20px;
-}
-
-@media (min-width: 901px) {
-  .mobile-nav-dots { display: none; }
-}
-
-.mobile-nav-hint {
-  position: absolute;
-  bottom: 54px; /* Tier 2: Hint */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4000;
-  color: #1e293b;
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  font-weight: 800;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0.45;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(4px);
-  padding: 4px 10px;
-  border-radius: 20px;
 }
 
 @media (min-width: 901px) {
