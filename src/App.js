@@ -351,6 +351,17 @@ const App = () => {
 
       <motion.div 
         className="sections-container"
+        drag={isWorksMobile ? "x" : false}
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.05}
+        onDragEnd={(e, { offset, velocity }) => {
+          const swipeThreshold = 50;
+          if (offset.x < -swipeThreshold) {
+            nextSection();
+          } else if (offset.x > swipeThreshold) {
+            prevSection();
+          }
+        }}
         animate={{ x: `-${currentSection * 100}%` }}
         transition={{ duration: 0.8, ease: [0.83, 0, 0.17, 1] }}
       >
