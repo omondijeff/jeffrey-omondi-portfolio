@@ -439,9 +439,11 @@ const App = () => {
                     </p>
                     <p>
                       This converged at <strong>Greenspoon</strong>, where I reported directly to the CTO to lead platform strategy during a period of 96% operational growth. 
-                      I led the architecture of end-to-end <strong>logistics, procurement, and transport/dispatch systems</strong>, digitizing their entire warehouse ecosystem. 
-                      By building an <strong>Internal Developer Platform (IDP)</strong>, I didn't just automate pipelines; I created "Golden Paths" for our engineers to ship with confidence. 
-                      Today, at BetterQA, I continue this mission—architecting global, multi-tenant SaaS platforms and AI-driven workflows that treat infrastructure as a first-class product.
+                      I led the architecture of end-to-end <strong>logistics, procurement, and transport/dispatch systems</strong> while building an <strong>Internal Developer Platform (IDP)</strong> to standardize our engineering "Golden Paths."
+                    </p>
+                    <p>
+                      Today, I continue to build at <strong>TajiLabs</strong> while providing strategic support for <strong>BetterQA’s</strong> multi-tenant SaaS. 
+                      Having worn the hats of a <strong>Software, AI, and DevOps Engineer</strong>, I am always open to new challenges that require bridging the gap between code, infrastructure, and intelligent automation.
                     </p>
                   </div>
                 </div>
