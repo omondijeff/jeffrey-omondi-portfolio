@@ -1312,6 +1312,14 @@ body {
 
 /* --- Mobile Hero Optimizations --- */
 @media (max-width: 900px) {
+  #root {
+    padding: 6px !important;
+  }
+  
+  .main-canvas {
+    border-radius: 20px !important;
+  }
+  
   .hero-content {
     left: 50% !important;
     top: 58% !important; /* Slightly higher than before to clear bottom bar */
