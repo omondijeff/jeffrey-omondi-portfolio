@@ -352,17 +352,17 @@ const App = () => {
                {expertiseCategories.map((cat, idx) => (
                  <motion.div 
                    key={idx} 
-                   className={`expertise-card${idx === 0 ? ' expertise-card--lead' : ''}`}
+                   className={`expertise-card horizontal${idx === 0 ? ' expertise-card--lead' : ''}`}
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ delay: 0.1 + idx * 0.05 }}
-                   whileHover={{ y: -10, scale: 1.01 }}
+                   whileHover={{ y: -5, x: 5, scale: 1.01 }}
                  >
-                   <div className="expertise-thumb">
+                   <div className="expertise-icon-side">
                      <div className="expertise-icon-wrapper">{cat.icon}</div>
-                     <h3 className="mono">{cat.title}</h3>
                    </div>
-                   <div className="expertise-info">
+                   <div className="expertise-content-side">
+                     <h3 className="mono">{cat.title}</h3>
                      <div className="skills-pill-cloud">
                        {cat.skills.map((skill, si) => <span key={si} className="skill-pill">{skill}</span>)}
                      </div>
