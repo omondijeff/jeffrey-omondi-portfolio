@@ -204,68 +204,61 @@ const App = () => {
         )}
       </AnimatePresence>
 
-      <motion.div 
-        className="sections-container"
-        animate={{ x: `-${currentSection * 100}%` }}
-        transition={springConfig}
-      >
+      <div className="sections-container" style={{ transform: `translateX(-${currentSection * 100}%)`, transition: 'transform 0.8s cubic-bezier(0.83, 0, 0.17, 1)' }}>
         {/* SECTION 0: HERO */}
-        <div className="section">
-          <section className="hero">
-            <div className="halo" />
-            <div className="grain-overlay" />
-            
-            {techLogos.map((logo, idx) => (
+        <section className="section hero">
+          <div className="grain-overlay" />
+          
+          {techLogos.map((logo, idx) => (
+            <motion.div 
+              key={idx}
+              style={{ 
+                position: 'absolute', 
+                top: logo.top, 
+                left: logo.left, 
+                right: logo.right, 
+                zIndex: 3,
+                width: 44,
+                height: 44,
+                overflow: 'hidden',
+                pointerEvents: 'none'
+              }}
+              animate={{ y: [0, idx % 2 === 0 ? -12 : 12, 0], opacity: [0.4, 0.6, 0.4] }}
+              transition={{ repeat: Infinity, duration: 8 + idx, ease: "easeInOut" }}
+            >
+              <img src={logo.src} alt={logo.name} width={44} height={44} style={{ width: 44, height: 44, objectFit: 'contain', filter: 'grayscale(80%) opacity(0.4)', display: 'block' }} />
+            </motion.div>
+          ))}
+
+          <AnimatePresence>
+            {currentSection === 0 && (
               <motion.div 
-                key={idx}
-                style={{ 
-                  position: 'absolute', 
-                  top: logo.top, 
-                  left: logo.left, 
-                  right: logo.right, 
-                  zIndex: 3,
-                  width: 44,
-                  height: 44,
-                  overflow: 'hidden',
-                  pointerEvents: 'none'
-                }}
-                animate={{ y: [0, idx % 2 === 0 ? -12 : 12, 0], opacity: [0.4, 0.6, 0.4] }}
-                transition={{ repeat: Infinity, duration: 8 + idx, ease: "easeInOut" }}
+                className="hero-content" 
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
               >
-                <img src={logo.src} alt={logo.name} width={44} height={44} style={{ width: 44, height: 44, objectFit: 'contain', filter: 'grayscale(80%) opacity(0.4)', display: 'block' }} />
+                <p className="hello">Hello, I'm</p>
+                <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
+                <p className="intro-text">Senior Platform Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
               </motion.div>
-            ))}
+            )}
+          </AnimatePresence>
 
-            <AnimatePresence>
-              {currentSection === 0 && (
-                <motion.div 
-                  className="hero-content" 
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -30 }}
-                >
-                  <p className="hello">Hello, I'm</p>
-                  <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
-                  <p className="intro-text">Senior Platform Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            <div className="hero-footer-left">
-              <div className="hall-of-fame glass-premium">
-                <div className="hall-item mono uppercase small">Platform & DEVOPS Engineer</div>
-              </div>
+          <div className="hero-footer-left">
+            <div className="hall-of-fame glass-premium">
+              <div className="hall-item mono uppercase small">Platform & DEVOPS Engineer</div>
             </div>
+          </div>
 
-            <div className="hero-footer-right">
-              <div className="socials">
-                <a href="mailto:jeffomondi.eng@gmail.com" className="social-circle blue"><Mail size={24} /></a>
-                <a href="https://github.com/omondijeff" className="social-circle"><GithubIcon size={24} /></a>
-                <a href="https://linkedin.com/in/omondijeff" className="social-circle"><LinkedinIcon size={24} /></a>
-              </div>
+          <div className="hero-footer-right">
+            <div className="socials">
+              <a href="mailto:jeffomondi.eng@gmail.com" className="social-circle blue"><Mail size={24} /></a>
+              <a href="https://github.com/omondijeff" className="social-circle"><GithubIcon size={24} /></a>
+              <a href="https://linkedin.com/in/omondijeff" className="social-circle"><LinkedinIcon size={24} /></a>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
         <div className="section works-view">
           <div className="works-scroll-container scroll-y">
@@ -321,7 +314,6 @@ const App = () => {
 
         {/* SECTION 2: SERVICES */}
         <div className="section services-view scroll-y">
-          <div className="halos"><div className="halo big" /><div className="halo small" /></div>
           <div className="grain-overlay" />
           <div className="services-scroll-container">
             <div className="services-header-sticky">
@@ -353,9 +345,8 @@ const App = () => {
           </div>
         </div>
 
-        {/* SECTION 3: ABOUT ME */}
+        {/* SECTION 3: ABOUT */}
         <div className="section about-view scroll-y">
-          <div className="halo top-right" />
           <div className="grain-overlay" />
           
           <div className="about-modern-layout">
@@ -395,9 +386,11 @@ const App = () => {
                     <div key={idx} className="v-timeline-item">
                       <div className="v-marker"></div>
                       <div className="v-content glass-premium">
-                        <span className="v-date mono">{job.date}</span>
-                        <h4>{job.role}</h4>
-                        <p className="v-company">{job.company}</p>
+                        <div className="v-header">
+                          <span className="v-date mono">{job.date}</span>
+                          <h4>{job.role}</h4>
+                          <p className="v-company">{job.company}</p>
+                        </div>
                         <ul className="v-points">
                           {job.points.map((p, pi) => <li key={pi}>{p}</li>)}
                         </ul>
@@ -461,7 +454,7 @@ const App = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Navigation Arrows */}
       <AnimatePresence>
