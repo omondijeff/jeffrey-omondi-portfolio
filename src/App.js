@@ -281,7 +281,8 @@ const App = () => {
       <motion.div 
         className="persistent-subject-wrapper"
         animate={{ 
-          x: (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? '-130%' : 
+          x: (isWorksMobile && currentSection === 0) ? "0" : 
+             (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? '-130%' : 
              currentSection === 0 ? "15%" : 
              (currentSection === 1 || currentSection === 2) ? "-32%" : 
              "-52%",
@@ -289,6 +290,7 @@ const App = () => {
                  (currentSection === 2) ? 0.72 : 0.85,
           opacity: (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? 0 :
                    currentSection === 2 ? 0.9 : 
+                   (isWorksMobile && currentSection === 3) ? 0.15 : // Even lower on mobile about
                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
@@ -675,6 +677,21 @@ const App = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Mobile Navigation Hint */}
+      <AnimatePresence>
+        {isWorksMobile && currentSection === 0 && (
+          <motion.div 
+            className="mobile-nav-hint mono uppercase"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 1.5 }}
+          >
+            <span>Swipe or Tap Dots</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Mobile Navigation Dots */}
       {isWorksMobile && (
         <div className="mobile-nav-dots">
