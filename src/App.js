@@ -360,12 +360,14 @@ const App = () => {
                    transition={{ delay: 0.1 + idx * 0.05 }}
                    whileHover={{ y: -10, scale: 1.01 }}
                  >
-                   <div className="expertise-header">
+                   <div className="expertise-thumb">
                      <div className="expertise-icon-wrapper">{cat.icon}</div>
                      <h3 className="mono">{cat.title}</h3>
                    </div>
-                   <div className="skills-pill-cloud">
-                     {cat.skills.map((skill, si) => <span key={si} className="skill-pill">{skill}</span>)}
+                   <div className="expertise-info">
+                     <div className="skills-pill-cloud">
+                       {cat.skills.map((skill, si) => <span key={si} className="skill-pill">{skill}</span>)}
+                     </div>
                    </div>
                  </motion.div>
                ))}
