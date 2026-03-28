@@ -18,7 +18,9 @@ import {
   Users,
   Mic,
   Brain,
-  Briefcase
+  Briefcase,
+  Bot,
+  Sparkles
 } from 'lucide-react';
 
 const GithubIcon = ({ size = 24 }) => (
@@ -115,6 +117,7 @@ const App = () => {
   });
 
   const expertiseCategories = [
+    { id: "agentic-ai", title: "Agentic AI & Automation", icon: <Bot size={28} />, skills: ["Multi-Agent Orchestration", "Autonomous Workflows", "AI Tooling (Claude, Cursor, Antigravity)", "LLM Agents", "Agentic RAG"] },
     { id: "devops", title: "DevOps & Cloud", icon: <Server size={28} />, skills: ["Jenkins", "Terraform", "Docker", "GitLab CI", "GitHub Actions", "Ansible", "AWS", "Kubernetes"] },
     { id: "backend", title: "Backend Development", icon: <Cpu size={28} />, skills: ["Node.js", "Express.js", "REST APIs", "Python", "PHP", "Laravel"] },
     { id: "ai-ml", title: "AI & Machine Learning", icon: <Brain size={28} />, skills: ["LLM Apps", "RAG & Vector DBs", "Prompt Engineering", "scikit-learn", "Pandas", "MLOps"] },
