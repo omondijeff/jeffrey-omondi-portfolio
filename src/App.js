@@ -127,12 +127,12 @@ const App = () => {
   ];
 
   const fullExperience = [
-    { role: "DevOps Engineer Consultant", company: "BetterQA | Remote (Romania)", date: "Sept 2025 – Present", desc: "Building scalable test automation frameworks and optimizing CI/CD pipelines.", points: ["Reduced manual QA by 65%", "Cut build cycles by 70%", "Fixed 30+ vulnerabilities"] },
-    { role: "Software Engineer – DevOps", company: "Greenspoon Kenya", date: "2022 – 2025", desc: "Led DevOps projects including loyalty plugins, CI/CD adoption, and infrastructure monitoring.", points: ["Built Greenspoon Loyalty Plugin", "Reduced deployment errors by 80%", "Optimized site load speed by 45%"] },
-    { role: "DevOps & Cloud Engineer", company: "Turality | Remote (US)", date: "2024 – 2025", desc: "Data-driven AI/ML startup support.", points: ["Cut hosting costs by 40% via AWS ECS", "Automated infra with Terraform", "Reduced diagnosis time via ELK stack"] },
-    { role: "Founder & DevOps Engineer", company: "TajiLabs", date: "2019 – 2022", desc: "Scaled a DevOps consultancy delivering solutions to 15+ organizations.", points: ["Partnered with 15+ organizations", "Migrated workloads to AWS/GCP", "Boosted client revenue by 40%"] },
-    { role: "Full Stack Software Engineer", company: "OboTech Solutions", date: "2019 – 2022", desc: "Built request management and fleet dispatch systems.", points: ["Request Management (500+ daily)", "Apollo Tours Dispatch System", "Fintech Sacco Automation"] },
-    { role: "IT Support Specialist Intern", company: "ICT Authority", date: "2019", desc: "Delivered ICT support under the Digital Literacy Program.", points: ["Supported 200+ staff", "Deployed 1,000+ devices", "Improved county workflows by 40%"] }
+    { role: "DevOps Engineer", company: "BetterQA | Remote (Romania)", date: "May 2025 – Present", desc: "Leading DevOps architecture for BetterFlow platform.", points: ["Architected multi-tenant SaaS on AWS/GCP with Terraform", "Built Kubernetes-based parallel test orchestration engine", "Established observability standards (Prometheus, Grafana, Loki)", "Engineered CI/CD pipelines with GitHub Actions & Jenkins"] },
+    { role: "Software Engineer DevOps", company: "Greenspoon Kenya", date: "Nov 2022 – April 2025", desc: "Led platform engineering and infrastructure strategy.", points: ["Built Internal Developer Platform (IDP) with Python automation", "Reduced deployment time from hours to minutes via Jenkins", "Managed AWS infrastructure for production workloads", "Architected Paperless logistics and warehouse systems"] },
+    { role: "DevOps Engineer AI/ML", company: "Turality LLC | Remote (US)", date: "Nov 2023 – Feb 2024", desc: "Led AI infrastructure for social automation platform.", points: ["Engineered LLM inference pipelines with Python & Boto3", "Architected resilient real-time LLM inference data pipelines", "Partnered with Data Science for automated drift detection"] },
+    { role: "Founder & DevOps Engineer", company: "TajiLabs", date: "Jan 2019 – Present", desc: "DevOps consultancy for enterprises in East Africa.", points: ["Owned cloud architecture & SRE strategy for 15+ clients", "Digitized warehouse operations for Bio Foods Kenya", "Led architecture for Remedy EdTech SaaS platform"] },
+    { role: "Full Stack Software Engineer", company: "OboTech Solutions", date: "July 2019 – April 2022", desc: "Developed cloud systems for fintech and enterprise clients.", points: ["Led development of CompactHydro Management System", "Automated reconciliation for SACCO/MFI platforms", "Deployed containerized apps with Docker/CI/CD pipelines"] },
+    { role: "IT Support Specialist Intern", company: "ICT Authority", date: "2019", desc: "ICT support under the Digital Literacy Program.", points: ["Supported 200+ staff and 1,000+ devices", "Improved county workflows by 40%", "Coordinated hardware & network deployments"] }
   ];
 
   const fullEducation = [
@@ -306,7 +306,7 @@ const App = () => {
               >
                 <p className="hello">Hello, I'm</p>
                 <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
-                <p className="intro-text">Senior Platform Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
+                <p className="intro-text">Senior DevOps Engineer dedicated to building high-performance, resilient cloud ecosystems.</p>
               </motion.div>
             )}
           </AnimatePresence>
@@ -438,7 +438,7 @@ const App = () => {
                       I realized my greatest impact wasn't just in building apps, but in building the <strong>platforms</strong> that made those apps stable, scalable, and fast.
                     </p>
                     <p>
-                      Today, as a <strong>Senior Platform Engineer</strong>, I bridge the gap between code and cloud. 
+                      Today, as a <strong>Senior DevOps Engineer</strong>, I bridge the gap between code and cloud. 
                       I don't just automate; I design <strong>Agentic AI systems</strong> and cloud-native workflows that empower developers to ship at the speed of thought. 
                       Every script I write is a continuation of that first realization: that the best systems are the ones you don't even know are there.
                     </p>
