@@ -679,10 +679,11 @@ body {
 }
 
 .expertise-card {
+  position: relative;
   border-radius: 24px;
   background: #fff;
   border: 1px solid #f1f5f9;
-  border-left: 4px solid var(--accent-primary);
+  border-left: 1px solid rgba(0, 122, 255, 0.15);
   box-shadow: 0 10px 30px #00000004;
   transition: 0.4s;
   display: flex;
@@ -691,6 +692,26 @@ body {
   overflow: hidden;
   padding: 1.8rem 2.2rem;
   gap: 1.8rem;
+}
+
+.expertise-card::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 32px;
+  width: 4px;
+  background: var(--accent-primary);
+  border-radius: 0 4px 4px 0;
+  transition: 0.3s ease-in-out;
+}
+
+.expertise-card:hover::before {
+  height: 100%;
+  border-radius: 0;
+  top: 0;
+  transform: translateY(0);
 }
 
 .expertise-icon-side {
@@ -726,8 +747,12 @@ body {
 .expertise-card.expertise-card--lead {
   grid-column: 1 / -1;
   background: #f8fafc;
-  border-left-width: 6px;
   padding: 2.2rem 2.8rem;
+}
+
+.expertise-card.expertise-card--lead::before {
+  height: 48px;
+  width: 6px;
 }
 
 .expertise-card.expertise-card--lead .expertise-icon-wrapper {
