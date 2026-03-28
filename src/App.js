@@ -637,21 +637,41 @@ const App = () => {
         </div>
       </motion.div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Controls */}
       <AnimatePresence>
         {currentSection < 3 && (
-          <motion.div className="arrow-nav next" onClick={nextSection} whileHover={{ x: 10, color: '#38bdf8' }} animate={{ opacity: currentSection === 1 ? 0.3 : 1 }}>
-            <ChevronRight size={40} />
-            <span className="mono">{currentSection === 0 ? "WORKS" : currentSection === 1 ? "SERVICES" : "ABOUT"}</span>
+          <motion.div 
+            className="nav-control next" 
+            onClick={nextSection}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+          >
+            <div className="nav-control-label mono uppercase small">
+              Next: {currentSection === 0 ? "WORKS" : currentSection === 1 ? "SERVICES" : "ABOUT"}
+            </div>
+            <div className="nav-control-btn">
+              <ChevronRight size={24} />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       <AnimatePresence>
         {currentSection > 0 && (
-          <motion.div className="arrow-nav prev" onClick={prevSection} whileHover={{ x: -10, color: '#38bdf8' }}>
-            <ChevronLeft size={40} />
-            <span className="mono">{currentSection === 1 ? "HOME" : currentSection === 2 ? "WORKS" : "SERVICES"}</span>
+          <motion.div 
+            className="nav-control prev" 
+            onClick={prevSection}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+          >
+            <div className="nav-control-btn">
+              <ChevronLeft size={24} />
+            </div>
+            <div className="nav-control-label mono uppercase small">
+              Back: {currentSection === 1 ? "HOME" : currentSection === 2 ? "WORKS" : "SERVICES"}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

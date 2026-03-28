@@ -1094,10 +1094,69 @@ body {
 }
 
 /* --- Global Elements --- */
-.arrow-nav { position: absolute; top: 52%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.8rem; cursor: pointer; color: #cbd5e1; z-index: 1000; transition: all 0.4s; }
-.arrow-nav:hover { color: var(--accent-primary); scale: 1.1; }
-.arrow-nav.next { right: 2.5%; }
-.arrow-nav.prev { left: 2.5%; }
+/* --- Navigation Controls (Premium) --- */
+.nav-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-control.next { right: 3%; flex-direction: row; }
+.nav-control.prev { left: 3%; flex-direction: row; }
+
+.nav-control-btn {
+  width: 58px;
+  height: 58px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e293b;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-control-label {
+  color: #1e293b;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.nav-control.prev .nav-control-label { transform: translateX(-10px); }
+
+/* Hover States */
+.nav-control:hover .nav-control-btn {
+  background: var(--accent-primary);
+  color: #fff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 15px 30px rgba(0, 122, 255, 0.25);
+  transform: scale(1.08);
+}
+
+.nav-control:hover .nav-control-label {
+  opacity: 0.6;
+  transform: translateX(0);
+}
+
+/* Specific Section Adjustments */
+@media (max-width: 900px) {
+  .nav-control { display: none; } /* Hide on mobile to avoid clutter, use swipe/tap dots */
+}
 .arrow-nav span { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.35em; }
 .btn-blue { background: var(--accent-primary); color: #fff; padding: 1rem 3rem; border-radius: 18px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 15px 35px #007aff4d; transition: 0.3s; }
 
