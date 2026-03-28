@@ -188,14 +188,12 @@ const App = () => {
       <motion.div 
         className="persistent-subject-wrapper"
         animate={{ 
-          x: isWorksMobile && currentSection === 1 ? '-130%' : 
+          x: (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? '-130%' : 
              currentSection === 0 ? "15%" : 
-             currentSection === 1 ? "-32%" : 
-             currentSection === 2 ? "120%" : "-52%",
-          scale: currentSection === 0 ? 1 : 
-                 currentSection === 2 ? 0.8 : 0.85,
-          opacity: isWorksMobile && currentSection === 1 ? 0 :
-                   currentSection === 2 ? 0 : 
+             (currentSection === 1 || currentSection === 2) ? "-32%" : 
+             "-52%",
+          scale: (currentSection === 0) ? 1 : 0.85,
+          opacity: (isWorksMobile && (currentSection === 1 || currentSection === 2)) ? 0 :
                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}

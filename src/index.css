@@ -591,15 +591,13 @@ body {
 }
 
 .services-scroll-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  width: 68%;
+  max-width: 100%;
   min-width: 0;
+  margin-left: auto;
   height: 100%;
   overflow-y: auto;
-  padding-right: 4px;
+  padding-right: 20px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-primary) transparent;
   box-sizing: border-box;
@@ -665,9 +663,8 @@ body {
 
 .services-full-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem 2.5rem;
-  padding: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1.5rem;
   padding-bottom: 120px;
   width: 100%;
   max-width: 100%;
@@ -694,14 +691,14 @@ body {
 
 .expertise-thumb {
   width: 100%;
-  height: 180px;
+  height: 140px;
   background: #f8fafc;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.2rem;
-  padding: 2rem;
+  gap: 0.8rem;
+  padding: 1.5rem;
 }
 
 .expertise-info {
@@ -710,25 +707,7 @@ body {
 
 /* Featured row: first capability spans full grid width on desktop */
 .expertise-card.expertise-card--lead {
-  grid-column: 1 / -1;
-  flex-direction: row;
-  align-items: stretch;
-  background: #fff;
-  border: 1px solid rgba(0, 122, 255, 0.14);
-  box-shadow: 0 18px 50px rgba(0, 122, 255, 0.07);
-}
-
-.expertise-card.expertise-card--lead .expertise-thumb {
-  width: 320px;
-  height: auto;
-  background: transparent;
-  border-right: 1px solid rgba(0, 122, 255, 0.08);
-}
-
-.expertise-card.expertise-card--lead .expertise-info {
-  flex: 1;
-  display: flex;
-  align-items: center;
+  grid-column: span 1;
 }
 
 /* Expertise header no longer used as a standalone div */
@@ -1006,7 +985,8 @@ body {
 
 /* Works only: right-aligned column on tablet/laptop (subject image clears left) */
 @media (max-width: 1400px) and (min-width: 901px) {
-  .works-scroll-container {
+  .works-scroll-container,
+  .services-scroll-container {
     width: 60%;
     max-width: 100%;
     margin-left: auto;
