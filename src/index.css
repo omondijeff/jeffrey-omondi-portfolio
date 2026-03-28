@@ -1314,8 +1314,8 @@ body {
 @media (max-width: 900px) {
   .hero-content {
     left: 50% !important;
-    top: 25% !important; /* Moved significantly higher to avoid face overlap */
-    transform: translate(-50%, -40%) !important;
+    top: 64% !important; /* Move text significantly lower */
+    transform: translate(-50%, -50%) !important;
     text-align: center;
     width: 90%;
     max-width: 480px;
@@ -1362,7 +1362,8 @@ body {
 
   .persistent-subject-wrapper {
     opacity: 0.5 !important;
-    transform: translateY(22%) !important; /* Push subject lower to clear the text */
+    align-items: flex-start !important; /* Bring face to top */
+    transform: translateY(-2%) !important; 
   }
 
   .hero-logos-ribbon {
@@ -1373,12 +1374,13 @@ body {
 
   .hero-footer-right {
     position: absolute !important;
-    bottom: 110px !important; /* Moved higher to clear hit and dots */
+    bottom: 95px !important;
     right: 50% !important;
     transform: translateX(50%) !important;
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
+    z-index: 5000;
   }
 
   .socials {
@@ -1394,7 +1396,7 @@ body {
 /* --- Mobile Nav Hint --- */
 .mobile-nav-hint {
   position: absolute;
-  bottom: 65px; /* Between socials and dots */
+  bottom: 55px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4000;
@@ -1446,7 +1448,7 @@ body {
 /* --- Restore Mobile Navigation Dots --- */
 .mobile-nav-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
