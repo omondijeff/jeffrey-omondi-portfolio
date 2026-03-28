@@ -423,12 +423,26 @@ const App = () => {
               <h2 className="section-title grad-text">Building <span>Foundations</span></h2>
               <div className="about-intro-grid">
                 <div className="main-bio">
+                  <div className="about-label mono uppercase grad-text">The Journey</div>
                   <p className="bio-large">
-                    I'm <strong>Jeffrey Omondi</strong>, a Senior Platform Engineer bridging software and infrastructure to build systems that matter.
+                    My journey didn't start in the cloud; it started in the trenches of IT support. 
                   </p>
-                  <p className="bio-sub">
-                    Specializing in CI/CD, cloud infrastructure, and developer productivity, I help teams ship faster, safer, and smarter.
-                  </p>
+                  <div className="bio-sub">
+                    <p>
+                      Supporting 200+ users at the ICT Authority taught me a fundamental lesson: <strong>systems fail because they lack strong foundations.</strong> 
+                      Seeing the gap between human frustration and technical debt inspired me to stop just fixing systems and start engineering them for resilience.
+                    </p>
+                    <p>
+                      That drive led me to found <strong>TajiLabs</strong>, where I spent three years helping 15+ organizations scale their infrastructure. 
+                      As a founder, I had to wear every engineering hat, but I consistently found myself drawn back to the "how" of it all. 
+                      I realized my greatest impact wasn't just in building apps, but in building the <strong>platforms</strong> that made those apps stable, scalable, and fast.
+                    </p>
+                    <p>
+                      Today, as a <strong>Senior Platform Engineer</strong>, I bridge the gap between code and cloud. 
+                      I don't just automate; I design <strong>Agentic AI systems</strong> and cloud-native workflows that empower developers to ship at the speed of thought. 
+                      Every script I write is a continuation of that first realization: that the best systems are the ones you don't even know are there.
+                    </p>
+                  </div>
                 </div>
                 <div className="about-stats-bento">
                   <div className="a-stat-bento glass-premium">
