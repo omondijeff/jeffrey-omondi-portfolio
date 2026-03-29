@@ -913,33 +913,54 @@ body {
 
 /* --- About Section: Modern Layout --- */
 .about-view { 
-  padding: 180px 6% 80px; 
-  background: #fafafa; 
-}
-
-.about-modern-layout {
-  max-width: 1300px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.about-hero-section {
-  margin-top: 100px;
-  margin-bottom: 6rem;
-}
-.about-view { 
-  padding: 240px 8% 100px; 
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
   background: #fdfdfd; 
   position: relative; 
   overflow: hidden; 
 }
 
+.about-header-sticky {
+  width: 32%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 160px 4% 100px;
+  background: var(--bg-inner);
+  border-right: 1px solid #f1f5f9;
+}
+
+.about-modern-layout {
+  width: 68%;
+  height: 100%;
+  margin: 0;
+  padding: 160px 6% 100px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
+}
+
+.about-modern-layout::-webkit-scrollbar { width: 4px; }
+.about-modern-layout::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 10px; }
+
+.about-hero-section {
+  margin-top: 100px;
+  margin-bottom: 6rem;
+}
+/* Overridden by specific about-view block above */
+
 .about-intro-grid {
   display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 6rem;
+  grid-template-columns: 1fr; /* Single column inside the scroll area */
+  gap: 4rem;
   align-items: flex-start;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .about-label {
@@ -1570,10 +1591,6 @@ body {
 
   .v-points {
     padding-left: 1rem !important;
-  }
-
-  .about-view .section-title {
-    /* Styles unified in shared block above */
   }
 
   /* Ensure About specific formatting remains correct if any spans need gradients */
