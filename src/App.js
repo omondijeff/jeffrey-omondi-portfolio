@@ -525,16 +525,20 @@ const App = () => {
         <div className="section about-view scroll-y">
           <div className="grain-overlay" />
           
+          <div className="about-header-sticky">
+            <div className="about-header-lead">
+              <span className="works-count mono uppercase">Perspective</span>
+              <h2 className="section-title grad-text">BUILDING <span>FOUNDATIONS</span></h2>
+            </div>
+            <p className="service-intro">
+              My career began in the literal infrastructure of the ICT Authority—deploying 1,000+ devices and provisioning bare metal servers.
+            </p>
+          </div>
+
           <div className="about-modern-layout">
-            <div className="about-hero-section">
-              <h2 className="section-title grad-text">Building <span>Foundations</span></h2>
-              <div className="about-intro-grid">
-                <div className="main-bio">
-                  <div className="about-label mono uppercase grad-text">The Journey</div>
-                  <p className="bio-large">
-                    My career began in the literal infrastructure of the <strong>ICT Authority (Ministry of ICT, Government of Kenya)</strong>—deploying 1,000+ devices and provisioning bare metal servers.
-                  </p>
-                  <div className="bio-sub">
+            <div className="about-intro-grid">
+              <div className="main-bio">
+                <div className="bio-sub">
                     <p>
                       Supporting 200+ staff at the ground level taught me a fundamental truth: <strong>software is only as reliable as the foundation it’s built on.</strong> 
                       Seeing the gap between user frustration and technical debt inspired me to stop just fixing systems and start engineering them for resilience.

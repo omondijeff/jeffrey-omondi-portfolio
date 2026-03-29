@@ -350,20 +350,53 @@ body {
     box-sizing: border-box;
   }
 
+  .section-title {
+    font-size: clamp(2rem, 9vw, 2.75rem) !important;
+    letter-spacing: -0.06em !important;
+    margin-bottom: 0.65rem !important;
+    line-height: 0.95 !important;
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .works-count {
+    font-size: 0.65rem !important;
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .about-header-sticky,
+  .services-header-sticky,
   .works-header-sticky {
-    padding-bottom: 0.45rem;
-    gap: 0.3rem;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 0 !important;
+    border: none !important;
   }
 
-  .works-view .works-section-title {
-    font-size: clamp(2rem, 9vw, 2.75rem);
-    letter-spacing: -0.06em;
-    margin-bottom: 0.65rem;
-    line-height: 0.95;
+  .about-header-lead,
+  .services-header-lead,
+  .works-header-lead {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-bottom: 0.5rem !important;
   }
 
-  .works-view .works-count {
-    font-size: 0.65rem;
+  .service-intro,
+  .work-intro {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    opacity: 0.7;
+    margin-bottom: 2rem !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
 
   .works-filter-bar {
@@ -468,29 +501,7 @@ body {
     gap: 0.28rem;
   }
 
-  .services-view .services-section-title {
-    font-size: 2.2rem !important;
-    line-height: 1.1 !important;
-    margin-bottom: 0.8rem !important;
-    text-transform: uppercase;
-    font-weight: 900;
-    background: linear-gradient(135deg, var(--accent-primary) 0%, #0ea5e9 100%) !important;
-    -webkit-background-clip: text !important;
-    background-clip: text !important; /* Standard property for compatibility */
-    -webkit-text-fill-color: transparent !important;
-    text-align: center !important;
-    width: 100%;
-  }
-  
-  .service-intro {
-    font-size: 0.95rem !important;
-    opacity: 0.75;
-    margin-bottom: 2.5rem !important;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center !important;
-  }
+/* Services Header Unified via shared classes above */
 
   .services-view .works-count {
     font-size: 0.65rem;
@@ -1538,12 +1549,10 @@ body {
   }
 
   .about-view .section-title {
-    font-size: 2.2rem !important;
-    text-align: center !important;
-    margin-bottom: 2rem !important;
-    width: 100% !important;
+    /* Styles unified in shared block above */
   }
 
+  /* Ensure About specific formatting remains correct if any spans need gradients */
   .about-view .section-title span {
     background: linear-gradient(135deg, var(--accent-primary) 0%, #0ea5e9 100%) !important;
     -webkit-background-clip: text !important;
