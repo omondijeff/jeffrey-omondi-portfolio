@@ -493,11 +493,14 @@ body {
   }
 
   .section.services-view {
-    align-items: stretch !important;
+    align-items: center !important;
     justify-content: flex-start !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding-top: 100px !important;
+    padding: 100px 20px 80px !important;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .services-scroll-container {
@@ -1527,6 +1530,34 @@ body {
     width: 100% !important;
     align-items: center !important;
     scale: 0.9; /* Slightly smaller logos on mobile */
+  }
+
+  .expertise-card {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 2.2rem 1.5rem !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .expertise-icon-side {
+    display: none !important;
+  }
+
+  .expertise-icon-wrapper {
+    width: 65px !important;
+    height: 65px !important;
+    margin-bottom: 0.5rem !important;
+    background: var(--bg-outer) !important;
+    border: 1px solid var(--border-color);
+  }
+
+  .skills-pill-cloud {
+    justify-content: center !important;
+    margin-top: 1rem !important;
   }
 
   .hero-footer-right {
