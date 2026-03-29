@@ -1114,9 +1114,9 @@ body {
 
 /* Mobile Adaptations */
 @media (max-width: 1100px) {
-  .about-intro-grid, .about-content-main { grid-template-columns: 1fr; gap: 4rem; }
-  .about-stats-bento { order: -1; }
-  .about-view { padding-top: 180px; }
+  .about-intro-grid, .about-content-main { grid-template-columns: 1fr; gap: 3rem; }
+  .about-stats-bento { order: -1; margin-bottom: 2.5rem; }
+  .about-view { padding-top: 100px !important; } /* Unified padding enforced */
 }
 
 @media (max-width: 768px) {
@@ -1471,13 +1471,76 @@ body {
     z-index: 5000;
   }
 
-  .socials {
-    gap: 1.5rem !important;
+  .bio-large {
+    font-size: 1.4rem !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
   }
 
-  .social-circle {
-    width: 38px !important; /* Smaller icons for more room */
-    height: 38px !important;
+  .about-intro-grid {
+    gap: 3rem !important;
+    margin-top: 2rem !important;
+  }
+
+  .about-stats-bento {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  .a-stat-bento {
+    padding: 1.5rem !important;
+    border-radius: 24px !important;
+  }
+
+  /* --- Professional Journey Mobile --- */
+  .vertical-timeline {
+    padding-left: 1.5rem !important;
+    border-left: 2px solid #f1f5f9 !important;
+    margin-left: 0.5rem !important;
+  }
+
+  .v-timeline-item {
+    margin-bottom: 3rem !important;
+  }
+
+  .v-marker {
+    left: -33px !important; /* Align with 1.5rem padding */
+    width: 14px !important;
+    height: 14px !important;
+    border-width: 3px !important;
+  }
+
+  .v-content {
+    padding: 1.5rem !important;
+    border-radius: 28px !important;
+    text-align: left !important;
+  }
+
+  .v-role-brand {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.65rem !important;
+  }
+
+  .v-company-logo {
+    width: 48px !important;
+    height: auto !important;
+    order: -1; /* Logo on top */
+  }
+
+  .v-timeline-item h4 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .v-points {
+    padding-left: 1rem !important;
+  }
+
+  .v-points li {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.5 !important;
   }
 }
 
