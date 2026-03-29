@@ -248,12 +248,11 @@ const App = () => {
   };
 
   const certificationBadges = [
-    { id: 'aws-sa', src: '/badge-aws-sa.png', label: 'AWS Solutions Architect' },
-    { id: 'aws-sap', src: '/badge-aws-sap.png', label: 'AWS SAP' },
-    { id: 'cka', src: '/badge-cka.png', label: 'CKA' },
-    { id: 'terraform', src: '/badge-terraform.png', label: 'Terraform' },
-    { id: 'kcna', src: '/badge-kcna.png', label: 'KCNA' },
-    { id: 'azure', src: '/badge-azure.png', label: 'Azure' }
+    { id: 'aws-sap', src: '/badge-aws-sap.png', label: 'AWS Certified Solutions Architect – Professional' },
+    { id: 'azure-sa', src: '/badge-azure-sa.png', label: 'Microsoft Certified: Azure Solutions Architect Expert' },
+    { id: 'terraform', src: '/badge-terraform.png', label: 'HashiCorp Certified: Terraform Associate' },
+    { id: 'cka', src: '/badge-cka.png', label: 'Certified Kubernetes Administrator (CKA)' },
+    { id: 'kcna', src: '/badge-kcna.png', label: 'Kubernetes and Cloud Native Associate (KCNA)' }
   ];
 
   const nextSection = () => currentSection < 3 && setCurrentSection(c => c + 1);
