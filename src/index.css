@@ -1572,13 +1572,14 @@ body {
   .expertise-card {
     flex-direction: column !important;
     align-items: center !important;
-    padding: 2.2rem 1.5rem !important;
+    padding: 2.2rem 1.8rem !important;
     text-align: center !important;
     gap: 1.5rem !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0 auto !important;
+    width: 94% !important;
+    max-width: 480px !important; /* Cap for folded tablets, but full on phones */
+    margin: 0 auto 1.5rem !important;
     border: 1px solid rgba(0, 122, 255, 0.08) !important;
+    border-radius: 32px !important;
   }
 
   .expertise-icon-side {
