@@ -1461,6 +1461,28 @@ body {
     justify-content: flex-start !important;
   }
 
+  /* --- Global Mobile UI Purge --- */
+  *::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: transparent !important;
+  }
+  
+  * {
+    scrollbar-width: none !important; /* Firefox */
+  }
+
+  .expertise-card::before,
+  .expertise-card::after,
+  .about-view::after,
+  .services-view::after {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
   .navbar {
     height: 72px !important;
     padding: 0 5% !important;
