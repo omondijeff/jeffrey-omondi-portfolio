@@ -934,44 +934,47 @@ body {
   opacity: 0.6;
 }
 
-/* --- About Section: Modern Layout --- */
-.about-view { 
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
-  padding: 0 !important;
-  background: #fdfdfd; 
-  position: relative; 
-  overflow: hidden; 
+/* --- About Section: Desktop Side-Sticky --- */
+@media (min-width: 901px) {
+  .about-view { 
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding: 0 !important;
+    background: #fdfdfd; 
+    position: relative; 
+    overflow: hidden; 
+  }
+
+  .about-header-sticky {
+    width: 32%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 160px 3% 100px;
+    background: var(--bg-inner);
+    border-right: 1px solid #f1f5f9;
+  }
+
+  .about-modern-layout {
+    width: 68%;
+    height: 100%;
+    margin: 0;
+    padding: 160px 6% 100px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) transparent;
+  }
+
+  .about-modern-layout::-webkit-scrollbar { width: 4px; }
+  .about-modern-layout::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 10px; }
 }
 
-.about-header-sticky {
-  width: 32%;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  padding: 160px 3% 100px;
-  background: var(--bg-inner);
-  border-right: 1px solid #f1f5f9;
-}
-
-.about-modern-layout {
-  width: 68%;
-  height: 100%;
-  margin: 0;
-  padding: 160px 6% 100px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-primary) transparent;
-}
-
-.about-modern-layout::-webkit-scrollbar { width: 4px; }
-.about-modern-layout::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 10px; }
-
+/* --- About Section: Global/Mobile Fallbacks --- */
 .about-hero-section {
   margin-top: 100px;
   margin-bottom: 6rem;
@@ -1549,21 +1552,34 @@ body {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 2rem !important;
-    margin-top: 2rem !important;
+    gap: 1.5rem !important;
+    margin-top: 1rem !important;
     width: 100% !important;
-  }
-
-  .main-bio {
-    width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
   }
 
   .about-stats-bento {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 0.85rem !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    order: -1;
+  }
+
+  .a-stat-bento {
+    height: 100px !important;
+    padding: 1rem !important;
+  }
+
+  .a-stat-bento .stat-num { font-size: 1.8rem !important; }
+  .a-stat-bento .stat-label-b { font-size: 0.65rem !important; }
+
+  .bio-sub p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
   }
 
   .a-stat-bento {
