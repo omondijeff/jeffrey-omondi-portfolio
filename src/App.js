@@ -290,9 +290,9 @@ const App = () => {
                  (currentSection === 2) ? 0.72 : 0.85,
           opacity: (isWorksMobile && currentSection !== 0) ? 0 :
                    (isWorksMobile && currentSection === 0) ? 0.5 :
-                   currentSection === 1 ? 0 : 
-                   currentSection === 2 ? 0.9 : 
-                   currentSection === 3 ? 0.25 : 1
+                    currentSection === 1 ? 0.85 : 
+                    currentSection === 2 ? 0.9 : 
+                    currentSection === 3 ? 0.25 : 1
         }}
         style={{ originY: 1 }}
         transition={springConfig}
