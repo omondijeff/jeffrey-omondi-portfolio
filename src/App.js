@@ -571,7 +571,6 @@ const App = () => {
                     <span className="stat-num grad-text">77+</span>
                     <span className="stat-label-b">Clients</span>
                   </div>
-                </div>
               </div>
             </div>
 
