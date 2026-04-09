@@ -17,7 +17,6 @@ import {
   Award,
   Users,
   Mic,
-  Brain,
   Briefcase,
   Bot
 } from 'lucide-react';
@@ -102,10 +101,10 @@ const App = () => {
   ];
 
   const experienceStats = [
-    { label: "Senior DevOps Engineer", img: "/pillar-cloud.png", offset: -20 },
-    { label: "Software Engineer", img: "/pillar-consultant.png", offset: 15 },
-    { label: "AI Engineer", img: "/pillar-workflow.png", offset: -40 },
-    { label: "Workflow Automation Specialist", img: "/pillar-cloud.png", offset: 10 },
+    { label: "Software Engineer", img: "/pillar-cloud.png", offset: -20 },
+    { label: "DevOps Engineer", img: "/pillar-consultant.png", offset: 15 },
+    { label: "Platform Engineer", img: "/pillar-workflow.png", offset: -40 },
+    { label: "SRE & Cloud Architect", img: "/pillar-cloud.png", offset: 10 },
   ];
 
 
@@ -180,77 +179,104 @@ const App = () => {
   });
 
   const expertiseCategories = [
-    { id: "agentic-ai", title: "Agentic AI & Automation", icon: <Bot size={28} />, skills: ["Multi-Agent Orchestration", "Autonomous Workflows", "AI Tooling (Claude, Cursor, Antigravity)", "LLM Agents", "Agentic RAG"] },
-    { id: "devops", title: "DevOps & Cloud", icon: <Server size={28} />, skills: ["Jenkins", "Terraform", "Docker", "GitLab CI", "GitHub Actions", "Ansible", "AWS", "Kubernetes"] },
-    { id: "backend", title: "Backend Development", icon: <Cpu size={28} />, skills: ["Node.js", "Express.js", "REST APIs", "Python", "PHP", "Laravel"] },
-    { id: "ai-ml", title: "AI & Machine Learning", icon: <Brain size={28} />, skills: ["LLM Apps", "RAG & Vector DBs", "Prompt Engineering", "scikit-learn", "Pandas", "MLOps"] },
-    { id: "automation", title: "Automation", icon: <Zap size={28} />, skills: ["Bash", "Python Scripting", "Go", "CI/CD Pipelines"] },
-    { id: "data", title: "Data & Databases", icon: <Database size={28} />, skills: ["PostgreSQL", "MySQL", "MongoDB", "DB Tuning"] },
-    { id: "frontend", title: "Frontend", icon: <Layout size={28} />, skills: ["Vue.js", "Next.js", "TypeScript", "React"] }
+    { id: "devops", title: "DevOps & Cloud", icon: <Server size={28} />, skills: ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "ArgoCD", "Terraform", "Ansible", "Pulumi", "GitOps"] },
+    { id: "backend", title: "Backend Development", icon: <Cpu size={28} />, skills: ["PHP (Laravel)", "Node.js (Express)", "Python (FastAPI/Django)", "Go", "Java (Spring Boot)", "REST & GraphQL"] },
+    { id: "agentic-ai", title: "Agentic AI & Automation", icon: <Bot size={28} />, skills: ["Multi-Agent Orchestration", "Autonomous Workflows", "LLM Agents", "Agentic RAG", "AI/ML Infrastructure"] },
+    { id: "observability", title: "Observability & SRE", icon: <Zap size={28} />, skills: ["Prometheus", "Grafana", "Loki", "ELK Stack", "DataDog", "SLOs/SLAs"] },
+    { id: "frontend", title: "Frontend & Mobile", icon: <Layout size={28} />, skills: ["React", "Vue.js", "Next.js", "TypeScript", "Flutter", "Tailwind CSS"] },
+    { id: "data", title: "Data & Databases", icon: <Database size={28} />, skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "DynamoDB", "MS Dynamics 365"] },
+    { id: "automation", title: "Workflow Automation", icon: <Briefcase size={28} />, skills: ["n8n", "RPA", "Bash/Python Scripting", "GitHub Actions", "Jenkins", "Azure DevOps"] }
   ];
 
   const fullExperience = [
     { 
-      role: "Senior DevOps Engineer", 
+      role: "Software & DevOps Engineer (Consultant)", 
       company: "BetterQA", 
       logo: "assets/logos/betterqa.svg",
       date: "May 2025 – Present", 
-      desc: "Leading DevOps architecture for BetterFlow—global multi-tenant SaaS for parallel browser test orchestration.", 
-      points: ["Architected Kubernetes-native test runners with auto-scaling capabilities on AWS/GCP", "Implemented enterprise-grade observability utilizing Prometheus, Grafana, and Loki", "Established standardized CI/CD deployment patterns for global infrastructure"] 
+      desc: "Scaling a QA automation SaaS platform through robust multi-tenant backend architecture and consistent pipeline infrastructure.", 
+      points: [
+        "Architected multi-tenant SaaS infrastructure using Terraform on AWS and GCP, ensuring isolation and scalability",
+        "Designed Kubernetes-based test orchestration engine reducing test execution latency by 40%",
+        "Led technical design of multi-tenant backend in Laravel/PHP for subscription and feature management",
+        "Engineered CI/CD pipelines with automated validation and zero-downtime database migrations"
+      ] 
     },
     { 
-      role: "Software Engineer DevOps", 
+      role: "Software Engineer & DevOps Lead", 
       company: "Greenspoon Kenya", 
       logo: "assets/logos/greenspoon.svg",
-      date: "Nov 2022 – April 2025", 
-      desc: "Directed platform engineering strategy reporting directly to CTO during 96% growth phase.", 
-      points: ["Architected and delivered Internal Developer Platform (IDP) with automated 'Golden Paths'", "Led end-to-end logistics, procurement, and transport/dispatch systems digitizing the entire ecosystem", "Managed AWS infrastructure lifecycle, reducing deployment lead time from hours to minutes"] 
+      date: "Nov 2022 – Dec 2025", 
+      desc: "Directed platform engineering and product software strategy reporting to CTO/CEO during peak growth.", 
+      points: [
+        "Built internal developer platform (IDP) standardizing SDLC and reducing deployment time from hours to minutes",
+        "Digitized end-to-end fulfillment through Greenspoon Paperless—an enterprise logistics and WMS system",
+        "Established IaC with Terraform across AWS, ensuring version-controlled and repeatable provisioning",
+        "Optimized server load by 60% on critical operational dashboards via query indexing and caching"
+      ] 
     },
     { 
-      role: "DevOps Engineer AI/ML", 
+      role: "AI/ML Engineer — DevOps & Backend", 
       company: "Turality LLC", 
       logo: "assets/logos/turality.png",
       date: "Nov 2023 – Feb 2024", 
-      desc: "Engineered high-performance infrastructure for social automation and AI inference.", 
-      points: ["Architected specialized LLM inference pipelines with GPU resource orchestration via Python/Boto3", "Implemented resilient, auto-scaling data pipelines for real-time generative AI inference", "Partnered with Data Science to standardize MLOps workflows and automated drift detection"] 
+      desc: "Engineered high-throughput LLM inference infrastructure and robust backend services.", 
+      points: [
+        "Engineered high-throughput LLM inference pipelines using Python (FastAPI, Boto3) with scaling GPU resources",
+        "Architected resilient data pipelines handling thousands of concurrent requests with circuit-breaking",
+        "Implemented automated model performance monitoring to detect data drift and inference degradation",
+        "Built NLP processing pipelines for tokenization, sentiment analysis, and intent classification"
+      ] 
     },
     { 
-      role: "Founder & DevOps Engineer", 
+      role: "Head of Engineering / Founder", 
       company: "TajiLabs", 
       logo: "assets/logos/tajilabs.png",
       date: "Jan 2019 – Present", 
-      desc: "Founded and scaling a DevOps consultancy focused on cloud architecture and SRE strategy.", 
-      points: ["Directed cloud architecture and SRE strategy for 15+ organizations across East Africa", "Architected TajiTrack: cloud-native GPS tracking/fleet management for financial institutions", "Built secure Edtech SaaS for Remedy and digitized supply chains using Python/n8n automation"] 
+      desc: "leading a DevOps consultancy focused on cloud architecture, SRE strategy, and custom software.", 
+      points: [
+        "Directed cloud architecture and SRE strategy for 15+ organizations using Kubernetes and Docker",
+        "Implemented Terraform-based IaC eliminating environment drift across all client deployments",
+        "Designed and built ERP, financial management, logistics, and fleet tracking platforms for Kenyan SMEs",
+        "Introduced sprint discipline and Jira-based workflows, formalizing role definitions and performance KPIs"
+      ] 
     },
     { 
       role: "Full Stack Software Engineer", 
       company: "OboTech Solutions", 
       logo: "assets/logos/obotech.png",
       date: "July 2019 – April 2022", 
-      desc: "Architected digital-first platforms for fintech and government institutions.", 
-      points: ["Led development of government Request Management Systems for NTSA Kenya", "Automated procurement and reconciliation workflows for high-volume SACCO/MFI platforms", "Deployed containerized microservices and CI/CD pipelines for mission-critical apps"] 
+      desc: "Architected digital-first platforms for fintech, government, and enterprise institutions.", 
+      points: [
+        "Led development of CompactHydro—cloud-based Request Management System (REST APIs, PostgreSQL, React)",
+        "Built SACCO/MFI platforms including reconciliation systems and transaction processing",
+        "Designed ApolloTours ERP covering booking flow, vehicle allocation, and customer management",
+        "Deployed containerized applications using Docker with automated CI/CD pipelines"
+      ] 
     },
     { 
       role: "IT Support Specialist", 
       company: "ICT Authority", 
       logo: "assets/logos/icta.png",
-      date: "2019", 
-      desc: "Supported Digital Literacy Program under the Ministry of ICT, Government of Kenya.", 
-      points: ["Coordinated deployment of 1,000+ devices and provisioned bare metal server infrastructure", "Supported 200+ staff at the ground level, maintaining 99% uptime for learning platforms", "Developed hardware and network deployment strategies for the national ICT initiative"] 
+      date: "2020", 
+      desc: "Supported Digital Literacy Program and government office infrastructure.", 
+      points: [
+        "Maintained IT infrastructure, managed data backup and recovery, and deployed new devices",
+        "Supported departmental staff and government officers on hardware and network deployment",
+        "Coordinated with external partners to maintain 99%+ uptime for learning platforms"
+      ] 
     }
   ];
 
   const fullEducation = [
-    { degree: "MSc. Computing & Info Systems", school: "Strathmore University", date: "Ongoing", desc: "Focus on cloud infrastructure, DevOps automation, and applied AI." },
-    { degree: "DevOps Engineering", school: "Moringa School", date: "2022 – 2023", desc: "Intensive program covering CI/CD, cloud architecture, and containerization." },
-    { degree: "BSc. Computer Science", school: "Kibabii University", date: "2017 – 2022", desc: "Core focus on Software Engineering; co-led Google Developer Student Club." }
+    { degree: "BSc. Computer Science", school: "Kibabii University", date: "2017 – 2022", desc: "Specialization: Software Engineering, Data Structures & Algorithms, Database Systems." },
+    { degree: "DevOps Engineering Professional", school: "Moringa School", date: "2022 – 2023", desc: "Focus: CI/CD, Containerization, Cloud Deployment, Infrastructure Automation, RPA." }
   ];
 
   const certificationsData = [
-    "AWS Solutions Architect (Candidate)",
-    "Certified DevSecOps Engineer (Candidate)",
-    "AI & LLMs Self-Driven Learning (Turality)",
-    "DevOps Engineering (Moringa School)"
+    "AWS Solutions Architect",
+    "Google Cloud Professional Cloud Architect",
+    "Certified Kubernetes Native Associate (CKNA)"
   ];
 
   const communityEngagement = [
@@ -427,9 +453,9 @@ const App = () => {
                 <h1 className="jeffrey-name grad-text">JEFFREY<br/>OMONDI</h1>
                 <div className="intro-text">
                   <div className="typewriter-container">
-                    <Typewriter texts={["Senior DevOps Engineer", "Software Engineer", "AI Engineer", "Workflow Automation Specialist"]} />
+                    <Typewriter texts={["Software Engineer", "DevOps Engineer", "Platform Engineer", "Cloud Architect"]} />
                   </div>
-                  <p className="intro-sub">Building high-performance, resilient cloud ecosystems.</p>
+                  <p className="intro-sub">Designing, building, and operating production systems at scale.</p>
                 </div>
                 
                 <div className="hero-logos-ribbon">
@@ -563,21 +589,20 @@ const App = () => {
               <div className="main-bio">
                 <div className="bio-sub">
                     <p>
-                      Supporting 200+ staff at the ground level taught me a fundamental truth: <strong>software is only as reliable as the foundation it’s built on.</strong> 
+                      Supporting 200+ staff at the ground level during my early ICT Authority apprenticeship taught me a fundamental truth: <strong>software is only as reliable as the foundation it’s built on.</strong> 
                       Seeing the gap between user frustration and technical debt inspired me to stop just fixing systems and start engineering them for resilience.
                     </p>
                     <p>
-                      That drive fueled the creation of <strong>TajiLabs</strong>, where I spent three years scaling cloud architecture for 15+ organizations. 
-                      This founder-led journey was my sandbox for diversification—from architecting secure <strong>Edtech SaaS for Remedy</strong> to leading digital transformation for SMEs across East Africa. 
+                      That drive fueled the creation of <strong>TajiLabs</strong>, a technology consultancy serving 15+ clients across East Africa. This founder-led journey was my sandbox for diversification—from designing multi-tenant SaaS products like <strong>Verifay</strong> to architecting Kubernetes-based infrastructure for global platforms. 
                       It taught me that DevOps isn't just a technical role; it's a <strong>business strategy</strong> for speed and stability.
                     </p>
                     <p>
-                      This converged at <strong>Greenspoon</strong>, where I reported directly to the CTO to lead platform strategy during a period of 96% operational growth. 
-                      I led the architecture of end-to-end <strong>logistics, procurement, and transport/dispatch systems</strong> while building an <strong>Internal Developer Platform (IDP)</strong> to standardize our engineering "Golden Paths."
+                      This converged at <strong>Greenspoon</strong>, where I reported to the CTO and CEO to lead platform strategy during a phase of massive 96% growth. 
+                      I architected an <strong>Internal Developer Platform (IDP)</strong> to standardize our engineering "Golden Paths" while digitizing end-to-end logistics through the <strong>Greenspoon Paperless</strong> WMS system.
                     </p>
                     <p>
-                      Today, I continue to build at <strong>TajiLabs</strong> while providing strategic support for <strong>BetterQA’s</strong> multi-tenant SaaS. 
-                      Having worn the hats of a <strong>Software, AI, and DevOps Engineer</strong>, I am always open to new challenges that require bridging the gap between code, infrastructure, and intelligent automation.
+                      Today, as a consultant for <strong>BetterQA</strong>, I scale enterprise SaaS platforms through multi-tenant backend architecture and Kubernetes test orchestration. 
+                      Whether I'm shipping backend APIs or architecting resilient cloud ecosystems, my focus remains on building systems that don't just work, but <strong>evolve</strong>.
                     </p>
                   </div>
                 </div>
@@ -587,12 +612,12 @@ const App = () => {
                     <span className="stat-label-b">Years Exp</span>
                   </div>
                   <div className="a-stat-bento glass-premium">
-                    <span className="stat-num grad-text">89+</span>
+                    <span className="stat-num grad-text">50+</span>
                     <span className="stat-label-b">Projects</span>
                   </div>
                   <div className="a-stat-bento glass-premium">
-                    <span className="stat-num grad-text">77+</span>
-                    <span className="stat-label-b">Clients</span>
+                    <span className="stat-num grad-text">15+</span>
+                    <span className="stat-label-b">Core Clients</span>
                   </div>
               </div>
             </div>
